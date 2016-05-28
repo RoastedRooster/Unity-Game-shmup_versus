@@ -5,7 +5,6 @@ public class ShooterBehavior : MonoBehaviour {
 
     public Weapon weapon;
     public GameObject position;
-    public float fireRate = 0.5F;
 
     private float nextFire = 0.0F;
 
