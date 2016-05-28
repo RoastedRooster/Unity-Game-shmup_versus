@@ -3,13 +3,19 @@ using System.Collections;
 
 public class ShooterBehavior : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public Weapon weapon;
+    public GameObject position;
+    public float fireRate = 0.5F;
+
+    private float nextFire = 0.0F;
+
+    public void fire() {
+        // Check if the player can fire
+        if(Time.time > nextFire) {
+
+            // Instantiate a new bullet
+            GameObject clone = Instantiate(weapon.bullet, position.transform.position, Quaternion.identity) as GameObject;
+            nextFire = Time.time + weapon.fireRate;
+        }
+    }
 }
