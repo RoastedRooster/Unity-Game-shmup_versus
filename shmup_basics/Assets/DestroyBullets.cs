@@ -14,6 +14,8 @@ public class DestroyBullets : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D(Collision2D coll) {
-        Destroy(coll.gameObject);
+        if (coll.transform.tag != "Player" && coll.transform.tag != "Ennemy") {
+            Destroy(coll.gameObject);
+        }
     }
 }
