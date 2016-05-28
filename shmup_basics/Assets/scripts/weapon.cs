@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 [CreateAssetMenuAttribute(menuName = "SHMUP/Weapon")]
 public class Weapon : ScriptableObject {
-    public string name;
-
     [Range(1f, 10f)]
     public float fireRate = 5f;
 

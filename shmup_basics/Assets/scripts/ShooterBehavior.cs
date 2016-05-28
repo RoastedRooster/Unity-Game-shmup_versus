@@ -4,7 +4,7 @@ using System.Collections;
 public class ShooterBehavior : MonoBehaviour {
 
     public Weapon weapon;
-    public int xDirection;
+    public int yDirection;
 
     private float nextFire = 0.0F;
     
@@ -12,16 +12,15 @@ public class ShooterBehavior : MonoBehaviour {
         // Check if the player can fire
         if(Time.time > nextFire) {
 
-            // Instantiate a new bullet
+            // Instantiate all the bullets and set needed attributes
             foreach (GameObject bullet in weapon.bullets) {
                 GameObject bullet_go = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
                 Bullet sc = bullet_go.GetComponent<Bullet>();
-                sc.setXDirection(xDirection);
-                sc.setXSpeed(weapon.bulletSpeed);
+                sc.setYDirection(yDirection);
+                sc.setYSpeed(weapon.bulletSpeed);
             }
             
-            // Make the bullet move
-            // bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, direction * weapon.bulletSpeed);
+            
 
             // Set cooldown
             nextFire = Time.time + weapon.fireRate;
