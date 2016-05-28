@@ -8,6 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 466114}
+  - 114: {fileID: 11406960}
   m_Layer: 10
   m_Name: weapon
   m_TagString: Untagged
@@ -28,7 +29,6 @@ GameObject:
   - 61: {fileID: 6164466}
   - 50: {fileID: 5089480}
   - 114: {fileID: 11497134}
-  - 114: {fileID: 11457990}
   m_Layer: 10
   m_Name: char_evil
   m_TagString: Untagged
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 14.5, y: 25.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 460734}
@@ -106,18 +106,19 @@ BoxCollider2D:
   m_Offset: {x: -1.8577423, y: -3.3026886}
   serializedVersion: 2
   m_Size: {x: 21.073847, y: 33.101532}
---- !u!114 &11457990
+--- !u!114 &11406960
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 163816}
+  m_GameObject: {fileID: 147716}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: deebe4328ab124e4eb5502ff236b2bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 127024, guid: 7621d3f89eb049d49890d0dd709f1383, type: 2}
+  weapon: {fileID: 11400000, guid: 3559fd0f735332b47b9cf0ecbaa40613, type: 2}
+  xDirection: 1
 --- !u!114 &11497134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,9 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ControllerIndex: 1
-  hMaxSpeed: 150
+  hMaxSpeed: 175
   vMaxSpeed: 150
-  weapon: {fileID: 0}
 --- !u!212 &21211250
 SpriteRenderer:
   m_ObjectHideFlags: 1

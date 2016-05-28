@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [CreateAssetMenuAttribute(menuName = "SHMUP/Weapon")]
 public class Weapon : ScriptableObject {
@@ -10,5 +11,5 @@ public class Weapon : ScriptableObject {
 
     public int bulletSpeed = 1;
 
-    public GameObject bullet;
+    public List<GameObject> bullets;
 }

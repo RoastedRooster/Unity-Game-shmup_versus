@@ -14,4 +14,5 @@ MonoBehaviour:
   name: 
   fireRate: 0.25
   bulletSpeed: 300
-  bullet: {fileID: 153776, guid: 4ea6d9cb07f352e45ad31a8652f8de2f, type: 2}
+  bullets:
+  - {fileID: 153776, guid: 4ea6d9cb07f352e45ad31a8652f8de2f, type: 2}
