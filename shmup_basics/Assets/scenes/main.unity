@@ -131,6 +131,20 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 147716, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
   m_PrefabInternal: {fileID: 1879507361}
+--- !u!114 &643739900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643739899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deebe4328ab124e4eb5502ff236b2bb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 11400000, guid: 3559fd0f735332b47b9cf0ecbaa40613, type: 2}
+  position: {fileID: 643739899}
+  direction: 1
 --- !u!1001 &993403159
 Prefab:
   m_ObjectHideFlags: 0
@@ -290,7 +304,8 @@ Prefab:
       propertyPath: direction
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11457990, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2058598447

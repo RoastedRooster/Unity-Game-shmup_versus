@@ -6,9 +6,9 @@ public class PlayerMovement : MonoBehaviour {
     public int ControllerIndex;
     public float hMaxSpeed = 5f;
     public float vMaxSpeed = 5f;
-    public ShooterBehavior weapon;
 
     private Rigidbody2D rb2d;
+    private ShooterBehavior weapon;
 
     public void setControllerIndex(int i) {
         ControllerIndex = i;
