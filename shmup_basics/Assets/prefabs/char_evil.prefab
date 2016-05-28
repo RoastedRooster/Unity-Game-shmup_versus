@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6101064}
   - 61: {fileID: 6164466}
   - 50: {fileID: 5089480}
+  - 114: {fileID: 11497134}
   m_Layer: 0
   m_Name: char_evil
   m_TagString: Untagged
@@ -46,7 +47,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &6101064
 BoxCollider2D:
@@ -76,6 +77,20 @@ BoxCollider2D:
   m_Offset: {x: -1.8577423, y: -3.3026886}
   serializedVersion: 2
   m_Size: {x: 21.073847, y: 33.101532}
+--- !u!114 &11497134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872486b9ac7dbec4fb3d9a1413c4e586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ControllerIndex: 1
+  hMaxSpeed: 150
+  vMaxSpeed: 150
 --- !u!212 &21211250
 SpriteRenderer:
   m_ObjectHideFlags: 1
