@@ -8,5 +8,7 @@ public class Weapon : ScriptableObject {
     [Range(1f, 10f)]
     public float fireRate = 5f;
 
+    public int bulletSpeed = 1;
+
     public GameObject bullet;
 }
