@@ -47,6 +47,9 @@ TagManager:
   - name: background_objects
     uniqueID: 2822799967
     locked: 0
+  - name: bullets
+    uniqueID: 1332957717
+    locked: 0
   - name: characters
     uniqueID: 751191483
     locked: 0
