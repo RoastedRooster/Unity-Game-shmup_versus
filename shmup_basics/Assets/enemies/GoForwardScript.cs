@@ -31,26 +31,27 @@ public class GoForwardScript : MonoBehaviour {
      {
          // vLastPos = transform.position;
          svLastPos = transform.position;
+
+        /* SIN movement with DOTween */
+        // First version : Using DOPath function, may break physic collision
+        // DOPath(Vector3[] waypoints, float duration, PathType pathType = Linear, PathMode pathMode = Full3D, int resolution = 10, Color gizmoColor = null)
+
+        // Second version : Using DOMove and give it the waypoints one by one with a corountine
+        // DOMove(Vector2 to, float duration, bool snapping)
      }
 
      // Update is called once per frame
      void Update ()
      {
-         vLastPos = transform.position;
+        vLastPos = transform.position;
 
-         // fTime += Time.deltaTime * CurveSpeed;
-
-         // Vector3 vSin = new Vector3(Mathf.Sin(fTime), -Mathf.Sin(fTime), 0);
-         // Vector3 vLin = new Vector3(MoveSpeed, MoveSpeed, 0);
-
-         // transform.position += (vSin + vLin) * Time.deltaTime;
-
-
+        /* SIN movement working */
+        /*
         transform.position = svLastPos + new Vector3(MoveSpeed * Time.time,
                                                      Mathf.Sin(Time.time * CurveSpeed) * curvMag,
                                                      0.0f);
+        */
 
-
-         Debug.DrawLine(vLastPos, transform.position, Color.green, 100);
+        Debug.DrawLine(vLastPos, transform.position, Color.green, 100);
      }
 }
