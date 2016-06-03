@@ -3,21 +3,7 @@ using System.Collections;
 using DG.Tweening;
 
 public class GoForwardScript : MonoBehaviour {
-
-    /*
-	// Use this for initialization
-	void Start () {
-        // DOMove(Vector2 to, float duration, bool snapping)
-        transform.DOMoveY(transform.position.y - 150, 2);
-        // Sequence mySequence = DOTween.Sequence();
-        // mySequence.Append
-	}
-
-	// Update is called once per frame
-	void Update () {
-
-	}
-    */
+    
      public float CurveSpeed = 5;
      public float MoveSpeed = 1;
      public float curvMag = 1;
@@ -29,8 +15,13 @@ public class GoForwardScript : MonoBehaviour {
      // Use this for initialization
      void Start ()
      {
-         // vLastPos = transform.position;
-         svLastPos = transform.position;
+        /* DOTween tests */
+        // DOMove(Vector2 to, float duration, bool snapping)
+        transform.DOMoveY(transform.position.y - 150, 2);
+        // Sequence mySequence = DOTween.Sequence();
+        // mySequence.Append
+
+        svLastPos = transform.position;
 
         /* SIN movement with DOTween */
         // First version : Using DOPath function, may break physic collision
@@ -46,11 +37,9 @@ public class GoForwardScript : MonoBehaviour {
         vLastPos = transform.position;
 
         /* SIN movement working */
-        /*
         transform.position = svLastPos + new Vector3(MoveSpeed * Time.time,
-                                                     Mathf.Sin(Time.time * CurveSpeed) * curvMag,
+                                                     (Mathf.Sin(Time.time * CurveSpeed) * curvMag) - ((MoveSpeed * Time.time) / 2),
                                                      0.0f);
-        */
 
         Debug.DrawLine(vLastPos, transform.position, Color.green, 100);
      }
