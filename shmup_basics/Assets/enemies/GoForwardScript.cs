@@ -25,9 +25,14 @@ public class GoForwardScript : MonoBehaviour {
 
         var move2 = Go.to(transform, 4f, new GoTweenConfig().positionPath(path, true));
 
-        var chain = new GoTweenChain(new GoTweenCollectionConfig().setIterations(-1));
+        var path2 = new GoSpline("forward_top_bot");
+        var move3 = Go.to(transform, 4f, new GoTweenConfig().positionPath(path2, true));
+
+        var chain = new GoTweenChain(new GoTweenCollectionConfig().setIterations(1));
+
         chain.append(move);
         chain.append(move2);
+        chain.append(move3);
 
         _tween = chain;
         _tween.play();

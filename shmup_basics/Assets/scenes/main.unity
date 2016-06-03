@@ -127,6 +127,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &897924172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 897924174}
+  - 114: {fileID: 897924173}
+  m_Layer: 0
+  m_Name: PathEditor_curve (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &897924173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 897924172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25af92ea012eb4667a9c36cc4a72a725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: forward_top_bot
+  pathColor: {r: 1, g: 0, b: 1, a: 1}
+  nodes:
+  - {x: 0, y: 0, z: 0}
+  - {x: -0.35056686, y: -754.4173, z: 0}
+  useStandardHandles: 0
+  forceStraightLinePath: 0
+  pathResolution: 50
+--- !u!4 &897924174
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 897924172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.301003, y: 42.155758, z: 27.625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1001 &993403159
 Prefab:
   m_ObjectHideFlags: 0
@@ -215,6 +262,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 637985c69f4d0054888c6b047b296876, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1167864073 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
+  m_PrefabInternal: {fileID: 1874211122}
+--- !u!114 &1167864079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1167864073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d648594fd819e5743a6b264ddc10e766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1222857302
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +287,7 @@ GameObject:
   - 4: {fileID: 1222857304}
   - 114: {fileID: 1222857303}
   m_Layer: 0
-  m_Name: PathEditor
+  m_Name: PathEditor_curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,10 +307,10 @@ MonoBehaviour:
   pathName: route52497
   pathColor: {r: 1, g: 0, b: 1, a: 1}
   nodes:
-  - {x: -446.29575, y: 326.65317, z: 0}
-  - {x: -441.9491, y: 99.864655, z: 0}
-  - {x: -202.31032, y: 100.16403, z: 66.79785}
-  - {x: -201.0761, y: 104.606026, z: 41.29956}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0.8544998, y: -200.01569, z: 0}
+  - {x: 197.94878, y: -249.08472, z: 66.79785}
+  - {x: 206.16722, y: -1.1081772, z: 41.29956}
   useStandardHandles: 0
   forceStraightLinePath: 0
   pathResolution: 50
