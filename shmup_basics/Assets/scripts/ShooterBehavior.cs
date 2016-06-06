@@ -4,9 +4,21 @@ using System.Collections;
 public class ShooterBehavior : MonoBehaviour {
 
     public Weapon weapon;
-    public int yDirection;
 
     private float nextFire = 0.0F;
+    private int yDir = 0;
+    private string layerName;
+
+    void Start() {
+        if (transform.parent.tag == "Player") {
+            yDir = 1;
+            layerName = "bullet_player";
+        }
+        else {
+            yDir = -1;
+            layerName = "bullet_enemy";
+        }
+    }
     
     public void fire() {
         // Check if the player can fire
@@ -16,11 +28,10 @@ public class ShooterBehavior : MonoBehaviour {
             foreach (GameObject bullet in weapon.bullets) {
                 GameObject bullet_go = Instantiate(bullet, transform.position, Quaternion.identity) as GameObject;
                 Bullet sc = bullet_go.GetComponent<Bullet>();
-                sc.setYDirection(yDirection);
+                sc.gameObject.layer = LayerMask.NameToLayer(layerName);
+                sc.setYDirection(yDir);
                 sc.setYSpeed(weapon.bulletSpeed);
             }
-            
-            
 
             // Set cooldown
             nextFire = Time.time + weapon.fireRate;
