@@ -16,7 +16,6 @@ public class GoDummyPath : MonoBehaviour
 	public bool forceStraightLinePath = false;
 	public int pathResolution = 50;
 	
-	
 	public void OnDrawGizmos()
 	{
 		// the editor will draw paths when force straight line is on

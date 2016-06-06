@@ -19,14 +19,14 @@ public class GoForwardScript : MonoBehaviour {
      void Start ()
      {
 
-        var path = new GoSpline("route52497");
-        var move = Go.to(transform, 4f, new GoTweenConfig()
+        var path = new GoSpline("little_curve");
+        var move = Go.to(transform, 1f, new GoTweenConfig()
             .positionPath(path, true));
 
-        var move2 = Go.to(transform, 4f, new GoTweenConfig().positionPath(path, true));
+        var move2 = Go.to(transform, 1f, new GoTweenConfig().positionPath(path, true));
 
         var path2 = new GoSpline("forward_top_bot");
-        var move3 = Go.to(transform, 4f, new GoTweenConfig().positionPath(path2, true));
+        var move3 = Go.to(transform, 2f, new GoTweenConfig().positionPath(path2, true));
 
         var chain = new GoTweenChain(new GoTweenCollectionConfig().setIterations(1));
 
@@ -36,20 +36,6 @@ public class GoForwardScript : MonoBehaviour {
 
         _tween = chain;
         _tween.play();
-        /* DOTween tests */
-        // DOMove(Vector2 to, float duration, bool snapping)
-        //transform.DOMoveY(transform.position.y - 150, 2);
-        // Sequence mySequence = DOTween.Sequence();
-        // mySequence.Append
-
-        //svLastPos = transform.position;
-
-        /* SIN movement with DOTween */
-        // First version : Using DOPath function, may break physic collision
-        // DOPath(Vector3[] waypoints, float duration, PathType pathType = Linear, PathMode pathMode = Full3D, int resolution = 10, Color gizmoColor = null)
-
-        // Second version : Using DOMove and give it the waypoints one by one with a corountine
-        // DOMove(Vector2 to, float duration, bool snapping)
     }
 
      // Update is called once per frame
