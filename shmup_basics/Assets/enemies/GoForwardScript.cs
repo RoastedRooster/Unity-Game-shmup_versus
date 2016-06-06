@@ -26,7 +26,7 @@ public class GoForwardScript : MonoBehaviour {
         var move2 = Go.to(transform, 1f, new GoTweenConfig().positionPath(path, true));
 
         var path2 = new GoSpline("forward_top_bot");
-        var move3 = Go.to(transform, 2f, new GoTweenConfig().positionPath(path2, true));
+        var move3 = Go.to(transform, 5f, new GoTweenConfig().positionPath(path2, true));
 
         var chain = new GoTweenChain(new GoTweenCollectionConfig().setIterations(1));
 

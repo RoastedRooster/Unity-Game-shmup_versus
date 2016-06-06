@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: triple_shot
+  m_Name: triple_shot_enemy
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   fireRate: 0.75
   bulletSpeed: 300
   bullets:
-  - {fileID: 153776, guid: f70ff165a1566b54a8fea57c493a671a, type: 2}
-  - {fileID: 153776, guid: 6f7de75e04e86d248abe4dccdc79162a, type: 2}
+  - {fileID: 153776, guid: 9a6b3991dc4cb9f4aa6664428909b273, type: 2}
+  - {fileID: 153776, guid: 2b51b6dafbbe12241aa472837211a7c2, type: 2}
   - {fileID: 153776, guid: 4ea6d9cb07f352e45ad31a8652f8de2f, type: 2}

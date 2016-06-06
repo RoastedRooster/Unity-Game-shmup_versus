@@ -29,6 +29,7 @@ GameObject:
   - 61: {fileID: 6164466}
   - 50: {fileID: 5089480}
   - 114: {fileID: 11497134}
+  - 95: {fileID: 9586242}
   m_Layer: 10
   m_Name: char_evil
   m_TagString: Player
@@ -43,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 229, y: -241, z: 0}
+  m_LocalPosition: {x: -242, y: -241, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466114}
@@ -77,7 +78,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6101064
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -106,6 +107,23 @@ BoxCollider2D:
   m_Offset: {x: -1.8577423, y: -3.3026886}
   serializedVersion: 2
   m_Size: {x: 21.073847, y: 33.101532}
+--- !u!95 &9586242
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163816}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99c01bc928d210640850ea628a152512, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11406960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: b589f3bd8dbf9e842923b0d5cecffdf4, type: 2}
-  yDirection: 1
 --- !u!114 &11497134
 MonoBehaviour:
   m_ObjectHideFlags: 1
