@@ -490,11 +490,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 449278, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.8
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 449278, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 23.9
+      value: -30.3
       objectReference: {fileID: 0}
     - target: {fileID: 11467568, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
       propertyPath: weapon
