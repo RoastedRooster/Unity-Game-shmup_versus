@@ -11,9 +11,9 @@ GameObject:
   - 212: {fileID: 21252676}
   - 58: {fileID: 5845234}
   - 50: {fileID: 5067504}
-  - 114: {fileID: 11412994}
+  - 114: {fileID: 11458986}
   m_Layer: 0
-  m_Name: forward_bullet
+  m_Name: 170_rand_angle_forward_bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4
---- !u!114 &11412994
+--- !u!114 &11458986
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,9 +70,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 153776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bbda3af64b40e408e01b95b5d14e9b, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b064f7ce174c04cbffe61d552428e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 170
 --- !u!212 &21252676
 SpriteRenderer:
   m_ObjectHideFlags: 1

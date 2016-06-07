@@ -12,7 +12,7 @@ GameObject:
   - 58: {fileID: 5845234}
   - 50: {fileID: 5067504}
   - 114: {fileID: 11458986}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: 10_rand_angle_forward_bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}

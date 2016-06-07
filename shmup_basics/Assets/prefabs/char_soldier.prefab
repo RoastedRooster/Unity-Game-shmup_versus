@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: b589f3bd8dbf9e842923b0d5cecffdf4, type: 2}
-  yDirection: 1
 --- !u!212 &21297978
 SpriteRenderer:
   m_ObjectHideFlags: 1
