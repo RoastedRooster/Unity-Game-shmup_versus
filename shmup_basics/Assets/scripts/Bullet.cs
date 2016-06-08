@@ -28,14 +28,4 @@ public class Bullet : MonoBehaviour {
     public int getYSpeed() {
         return ySpeed;
     }
-
-    /*
-    public void setYDirection(int direction) {
-        yDirection = direction;
-    }
-
-    public int getYDirection() {
-        return yDirection;
-    }
-    */
 }
