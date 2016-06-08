@@ -3,7 +3,9 @@ using System.Collections;
 
 public class EnemyBehavior : MonoBehaviour {
 
-    int health = 2;
+    [SerializeField]
+    private float health = 2;
+
     private ShooterBehavior weapon;
 
     void Awake() {
@@ -20,8 +22,8 @@ public class EnemyBehavior : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll) {
         if(coll.tag == "bullet" && coll.gameObject.layer == LayerMask.NameToLayer("bullet_player")) {
-            health--;
-			GameObject.Destroy (coll.gameObject);
+            health -= coll.GetComponent<BulletBehavior>().getDamage();
+            GameObject.Destroy (coll.gameObject);
         }
     }
 }

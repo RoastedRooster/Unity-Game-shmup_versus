@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 449996}
   - 61: {fileID: 6104402}
-  - 114: {fileID: 11403450}
+  - 114: {fileID: 11411092}
   m_Layer: 0
   m_Name: evil_base_trigger
   m_TagString: Untagged
@@ -71,7 +71,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &11403450
+--- !u!114 &11411092
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,9 +79,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 178820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1150465f66d25ad4591aabbb205c3ba8, type: 3}
+  m_Script: {fileID: 11500000, guid: 37087319b6f4d554d96434f61ec4702a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

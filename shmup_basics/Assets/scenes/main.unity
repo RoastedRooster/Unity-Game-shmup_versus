@@ -227,7 +227,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423422, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.867361
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 423422, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -256,10 +256,6 @@ Prefab:
     - target: {fileID: 423422, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 163094, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
-      propertyPath: m_Name
-      value: soldier_base
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
@@ -390,10 +386,6 @@ Prefab:
     - target: {fileID: 434296, guid: 1ea598794ca971f449312f3574fafb4f, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 116576, guid: 1ea598794ca971f449312f3574fafb4f, type: 2}
-      propertyPath: m_Name
-      value: evil_base
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ea598794ca971f449312f3574fafb4f, type: 2}
