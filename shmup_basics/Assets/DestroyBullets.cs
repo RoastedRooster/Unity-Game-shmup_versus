@@ -8,11 +8,4 @@ public class DestroyBullets : MonoBehaviour {
 			Destroy (coll.gameObject);
 		}
     }
-
-	void OnCollisionExit2D(Collision2D coll) {
-		Debug.Log ("Destroy you know");
-		if (coll.transform.tag == "Enemy") {
-			Destroy (coll.gameObject);
-		}
-	}
 }

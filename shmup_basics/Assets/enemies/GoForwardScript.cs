@@ -51,4 +51,8 @@ public class GoForwardScript : MonoBehaviour {
 
         //Debug.DrawLine(vLastPos, transform.position, Color.green, 100);
      }
+
+    public void OnDestroy() {
+        _tween.destroy();
+    }
 }

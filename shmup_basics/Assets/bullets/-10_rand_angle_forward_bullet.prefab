@@ -12,6 +12,7 @@ GameObject:
   - 58: {fileID: 5845234}
   - 50: {fileID: 5067504}
   - 114: {fileID: 11458986}
+  - 114: {fileID: 11485638}
   m_Layer: 0
   m_Name: -10_rand_angle_forward_bullet
   m_TagString: bullet
@@ -74,6 +75,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: -10
+--- !u!114 &11485638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc43fb5e5a5a21244a6b7c01e2156edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21252676
 SpriteRenderer:
   m_ObjectHideFlags: 1

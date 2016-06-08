@@ -7,6 +7,11 @@ public class PlayerBehavior : MonoBehaviour {
     public float hMaxSpeed = 175f;
     public float vMaxSpeed = 150f;
 
+    public GameObject startingPoint;
+
+    [SerializeField]
+    private float health = 5;
+    private float startingHealth;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
 
@@ -21,6 +26,19 @@ public class PlayerBehavior : MonoBehaviour {
     void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
         weapon = gameObject.GetComponentInChildren<ShooterBehavior>();
+        startingHealth = health;
+    }
+
+    void Update() {
+        if(health <= 0) {
+            killPlayer();
+        }
+    }
+
+    void killPlayer() {
+        // TODO : Explosioooooon
+        transform.position = startingPoint.transform.position;
+        health = startingHealth;
     }
 
     void FixedUpdate() {
@@ -36,6 +54,10 @@ public class PlayerBehavior : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.transform.tag == "bullet") {
+            // Damage player
+            health -= coll.GetComponent<BulletBehavior>().getDamage();
+
+            // Destroy the player
 			GameObject.Destroy (coll.gameObject);
 		}
 	}
