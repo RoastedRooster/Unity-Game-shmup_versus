@@ -52,6 +52,10 @@ public class PlayerBehavior : MonoBehaviour {
         }
     }
 
+    public void win() {
+        Debug.Log("Player " + name + " win !");
+    }
+
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.transform.tag == "bullet") {
             // Damage player
