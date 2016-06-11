@@ -255,7 +255,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423422, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11403480, guid: 8ce146fdc3d25ed45a052ee9a16f991b, type: 2}
       propertyPath: enemy
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c152e4456b6294140b199723c095db06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endingMode: 4
+  endingMode: 0
   waveList:
   - {fileID: 11400000, guid: 6a98bb743ee50194ab7c6e2283445a02, type: 2}
   waveCount: 0
@@ -436,7 +436,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434296, guid: 1ea598794ca971f449312f3574fafb4f, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 11411092, guid: 1ea598794ca971f449312f3574fafb4f, type: 2}
       propertyPath: enemy
@@ -577,14 +577,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 11493922, guid: f0968af3d409445189f280ba5808eae3, type: 2}
-      propertyPath: playerField
-      value: 
-      objectReference: {fileID: 1934210247}
     - target: {fileID: 11470962, guid: f0968af3d409445189f280ba5808eae3, type: 2}
       propertyPath: playerField
       value: 
       objectReference: {fileID: 1253106639}
+    - target: {fileID: 11493922, guid: f0968af3d409445189f280ba5808eae3, type: 2}
+      propertyPath: playerField
+      value: 
+      objectReference: {fileID: 1934210247}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0968af3d409445189f280ba5808eae3, type: 2}
   m_IsPrefabParent: 0
@@ -745,7 +745,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1001 &1874211122
 Prefab:
   m_ObjectHideFlags: 0
@@ -783,7 +783,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 482156, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11480282, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
       propertyPath: m_Enabled
