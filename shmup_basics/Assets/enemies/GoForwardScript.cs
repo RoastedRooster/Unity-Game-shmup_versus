@@ -53,6 +53,8 @@ public class GoForwardScript : MonoBehaviour {
      }
 
     public void OnDestroy() {
-        _tween.destroy();
+        if(_tween != null) {
+            _tween.destroy();
+        }
     }
 }
