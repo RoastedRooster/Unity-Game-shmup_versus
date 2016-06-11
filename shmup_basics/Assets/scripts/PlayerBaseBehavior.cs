@@ -3,13 +3,15 @@ using System.Collections;
 
 public class PlayerBaseBehavior : MonoBehaviour {
 
+    public GameObject enemy;
+
     [SerializeField]
     private int health = 5;
 	
 	// Update is called once per frame
 	void Update () {
 	    if(health <= 0) {
-            Debug.Log("Player loose !");
+            enemy.GetComponent<PlayerBehavior>().win();
         }
 	}
 
