@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerField: {fileID: 0}
+  powerUpPrefab: {fileID: 171230, guid: 01cec57467a9d43cbbec4a36bb9c7d94, type: 2}
 --- !u!114 &11493922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerField: {fileID: 0}
+  powerUpPrefab: {fileID: 171230, guid: 01cec57467a9d43cbbec4a36bb9c7d94, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

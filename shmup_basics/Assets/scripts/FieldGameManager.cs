@@ -4,6 +4,7 @@ using System.Collections;
 public class FieldGameManager : MonoBehaviour {
 
 	public GameObject playerField;
+	public GameObject powerUpPrefab;
 
 	private Vector2 startPoint;
 	private Vector2 endPoint;
@@ -16,10 +17,10 @@ public class FieldGameManager : MonoBehaviour {
         float width = fieldSprite.bounds.size.x;
         float height = fieldSprite.bounds.size.y;
 
-        startPoint = new Vector2(playerField.transform.position.x - width/2,
+		startPoint = new Vector2((playerField.transform.position.x - width/2) + 25,
                                  playerField.transform.position.y + height/2);
 
-        endPoint = new Vector2(playerField.transform.position.x + width / 2,
+		endPoint = new Vector2((playerField.transform.position.x + width / 2) - 25,
                                playerField.transform.position.y + height / 2);
         
         randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),

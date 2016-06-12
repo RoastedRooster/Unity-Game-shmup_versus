@@ -58,3 +58,6 @@ TagManager:
   - name: walls
     uniqueID: 3226235091
     locked: 0
+  - name: powerup
+    uniqueID: 434506467
+    locked: 0

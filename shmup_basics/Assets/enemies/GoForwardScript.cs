@@ -12,12 +12,12 @@ public class GoForwardScript : MonoBehaviour {
     protected AbstractGoTween _tween;
 
     float fTime = 0;
-     Vector3 vLastPos = Vector3.zero;
-     Vector3 svLastPos = Vector3.zero;
+	Vector3 vLastPos = Vector3.zero;
+	Vector3 svLastPos = Vector3.zero;
 
-     // Use this for initialization
-     void Start ()
-     {
+	// Use this for initialization
+	void Start ()
+	{
 
         var path = new GoSpline("little_curve");
         var move = Go.to(transform, 1f, new GoTweenConfig()
@@ -38,9 +38,9 @@ public class GoForwardScript : MonoBehaviour {
         _tween.play();
     }
 
-     // Update is called once per frame
-     void Update ()
-     {
+    // Update is called once per frame
+    void Update ()
+   	{
 
         //vLastPos = transform.position;
 
@@ -50,7 +50,7 @@ public class GoForwardScript : MonoBehaviour {
         //                                             0.0f);
 
         //Debug.DrawLine(vLastPos, transform.position, Color.green, 100);
-     }
+    }
 
     public void OnDestroy() {
         if(_tween != null) {
