@@ -22,9 +22,21 @@ public class FieldGameManager : MonoBehaviour {
 
 		endPoint = new Vector2((playerField.transform.position.x + width / 2) - 25,
                                playerField.transform.position.y + height / 2);
-        
+
+        /*
         randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),
                                       startPoint.y);
+        */
+        StartCoroutine(DropPowerUp());
+    }
+
+    
+    IEnumerator DropPowerUp() {
+        randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),
+                                      startPoint.y);
+        Instantiate(powerUpPrefab, randPos, Quaternion.identity);
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(DropPowerUp());
     }
 
     // Update is called once per frame
