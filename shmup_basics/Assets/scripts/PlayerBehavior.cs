@@ -63,6 +63,9 @@ public class PlayerBehavior : MonoBehaviour {
 
             // Destroy the player
 			GameObject.Destroy (coll.gameObject);
-		}
+		} else if (coll.transform.tag == "powerup") {
+            Debug.Log("Powerup");
+            GameObject.Destroy(coll.gameObject);
+        }
 	}
 }
