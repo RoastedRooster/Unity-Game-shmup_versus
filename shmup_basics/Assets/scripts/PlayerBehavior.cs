@@ -14,6 +14,7 @@ public class PlayerBehavior : MonoBehaviour {
     private float startingHealth;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
+    private GameObject actualPowerUp = null;
 
     public void setControllerIndex(int i) {
         ControllerIndex = i;
@@ -56,6 +57,13 @@ public class PlayerBehavior : MonoBehaviour {
         Debug.Log("Player " + name + " win !");
     }
 
+    void catchPowerUp(GameObject powerUp) {
+        if(actualPowerUp == null) {
+            actualPowerUp = powerUp;
+            // powerUp.GetComponent<PowerUpBehavior>();
+        }
+    }
+
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.transform.tag == "bullet") {
             // Damage player
@@ -64,7 +72,7 @@ public class PlayerBehavior : MonoBehaviour {
             // Destroy the player
 			GameObject.Destroy (coll.gameObject);
 		} else if (coll.transform.tag == "powerup") {
-            Debug.Log("Powerup");
+            catchPowerUp(coll.gameObject);
             GameObject.Destroy(coll.gameObject);
         }
 	}
