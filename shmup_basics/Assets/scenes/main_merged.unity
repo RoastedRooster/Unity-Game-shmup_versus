@@ -306,6 +306,7 @@ MonoBehaviour:
   endingMode: 0
   waveList:
   - {fileID: 11400000, guid: 6a98bb743ee50194ab7c6e2283445a02, type: 2}
+  - {fileID: 11400000, guid: 7b21777d621764001baec86d6a15847c, type: 2}
   waveCount: 0
 --- !u!1001 &511722436
 Prefab:
