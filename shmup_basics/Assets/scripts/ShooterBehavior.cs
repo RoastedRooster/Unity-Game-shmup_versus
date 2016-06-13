@@ -19,7 +19,7 @@ public class ShooterBehavior : MonoBehaviour {
             layerName = "bullet_enemy";
         }
     }
-    
+
     public void fire() {
         // Check if the player can fire
         if(Time.time > nextFire) {
@@ -34,7 +34,14 @@ public class ShooterBehavior : MonoBehaviour {
             }
 
             // Set cooldown
-            nextFire = Time.time + weapon.fireRate;
+            float fireRateCoefficient = 0.0f;
+            if(transform.parent.tag == "Player") {
+                fireRateCoefficient = GetComponentInParent<PlayerBehavior>().getFireRateCoefficient();
+            } else {
+                fireRateCoefficient = GetComponentInParent<EnemyBehavior>().getFireRateCoefficient();
+            }
+
+            nextFire = Time.time + weapon.fireRate * fireRateCoefficient;
         }
     }
 }

@@ -5,20 +5,18 @@ using System;
 public class TestPowerUp : MonoBehaviour, IPowerUp {
 
     void IPowerUp.bonus() {
-        throw new NotImplementedException();
+        StartCoroutine("IncreasePlayerFireRate");
     }
 
     void IPowerUp.malus() {
-        throw new NotImplementedException();
+        StartCoroutine("DecreaseOpponentFireRate");
     }
 
-    // Use this for initialization
-    void Start () {
-	
+    IEnumerator IncreasePlayerFireRate () {
+        yield return new WaitForSeconds(3.0f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    IEnumerator DecreaseOpponentFireRate () {
+        yield return new WaitForSeconds(3.0f);
+    }
 }

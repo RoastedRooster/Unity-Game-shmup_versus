@@ -22,4 +22,12 @@ public class PowerUpBehavior : MonoBehaviour {
     public void activateMalus() {
         powerUp.malus();
     }
+
+    public void setPlayer(GameObject player) {
+
+    }
+
+    public void setOpponent(GameObject opponent) {
+
+    }
 }
