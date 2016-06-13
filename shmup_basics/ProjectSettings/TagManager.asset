@@ -50,6 +50,9 @@ TagManager:
   - name: background_objects
     uniqueID: 2822799967
     locked: 0
+  - name: powerup
+    uniqueID: 434506467
+    locked: 0
   - name: bullets
     uniqueID: 1332957717
     locked: 0
@@ -58,7 +61,4 @@ TagManager:
     locked: 0
   - name: walls
     uniqueID: 3226235091
-    locked: 0
-  - name: powerup
-    uniqueID: 434506467
     locked: 0
