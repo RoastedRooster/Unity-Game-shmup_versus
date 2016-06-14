@@ -4,11 +4,11 @@ using System;
 
 public class TestPowerUp : PowerUp {
 
-    override public void bonus(PlayerBehavior player) {
+    override public void activateBonus(PlayerBehavior player) {
         StartCoroutine(IncreasePlayerFireRate(player));
     }
 
-    override public void malus(PlayerBehavior opponent) {
+    override public void activateMalus(PlayerBehavior opponent) {
         StartCoroutine(DecreaseOpponentFireRate(opponent));
     }
 

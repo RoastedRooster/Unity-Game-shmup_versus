@@ -12,7 +12,7 @@ namespace rr.editor.wavesystem {
         SerializedProperty duration;
 
         public GameObject newEnemy = null;
-        public Transform newLocation = null;
+        public GameObject newLocation = null;
         public MovePattern newPattern = null;
         public float newTime = 0f;
 
@@ -52,7 +52,7 @@ namespace rr.editor.wavesystem {
 
                 EditorGUI.indentLevel += 1;
                 currentSpawn.enemyPrefab = EditorGUILayout.ObjectField("Object to spawn", currentSpawn.enemyPrefab, typeof(GameObject), false) as GameObject;
-                currentSpawn.spawnLocation = EditorGUILayout.ObjectField("Where to spawn", currentSpawn.spawnLocation, typeof(GameObject), false) as Transform;
+                currentSpawn.spawnLocation = EditorGUILayout.ObjectField("Where to spawn", currentSpawn.spawnLocation, typeof(GameObject), false) as GameObject;
                 currentSpawn.movementPattern = EditorGUILayout.ObjectField("Movement pattern to apply", currentSpawn.movementPattern, typeof(MovePattern), false) as MovePattern;
                 currentSpawn.timeBeforeNextSpawn = EditorGUILayout.FloatField("Time before next spawn", currentSpawn.timeBeforeNextSpawn);
                 EditorGUI.indentLevel -= 1;
@@ -67,7 +67,7 @@ namespace rr.editor.wavesystem {
 
             EditorGUI.indentLevel += 1;
             newEnemy = EditorGUILayout.ObjectField("Object to spawn", newEnemy, typeof(GameObject), false) as GameObject;
-            newLocation = EditorGUILayout.ObjectField("Where to spawn", newLocation, typeof(GameObject), false) as Transform;
+            newLocation = EditorGUILayout.ObjectField("Where to spawn", newLocation, typeof(GameObject), false) as GameObject;
             newPattern = EditorGUILayout.ObjectField("Movement pattern to apply", newPattern, typeof(MovePattern), false) as MovePattern;
             newTime = EditorGUILayout.FloatField("Time before next spawn", newTime);
             if (GUILayout.Button("Add", GUILayout.Width(50))) {

@@ -18,11 +18,11 @@ public class PowerUpBehavior : MonoBehaviour {
     }
 
     public void activateBonus() {
-        powerUp.bonus(player);
+        powerUp.activateBonus(player);
     }
 
     public void activateMalus() {
-        powerUp.malus(opponent);
+        powerUp.activateMalus(opponent);
     }
 
     public void setPlayer(GameObject player) {
