@@ -2,21 +2,25 @@
 using System.Collections;
 using System;
 
-public class TestPowerUp : MonoBehaviour, IPowerUp {
+public class TestPowerUp : PowerUp {
 
-    void IPowerUp.bonus() {
-        StartCoroutine("IncreasePlayerFireRate");
+    override public void bonus(PlayerBehavior player) {
+        StartCoroutine(IncreasePlayerFireRate(player));
     }
 
-    void IPowerUp.malus() {
-        StartCoroutine("DecreaseOpponentFireRate");
+    override public void malus(PlayerBehavior opponent) {
+        StartCoroutine(DecreaseOpponentFireRate(opponent));
     }
 
-    IEnumerator IncreasePlayerFireRate () {
+    IEnumerator IncreasePlayerFireRate(PlayerBehavior player) {
+        player.setFireRateCoefficient(0.5f);
         yield return new WaitForSeconds(3.0f);
-	}
+        player.setFireRateCoefficient(1);
+    }
 
-    IEnumerator DecreaseOpponentFireRate () {
+    IEnumerator DecreaseOpponentFireRate(PlayerBehavior opponent) {
+        opponent.setFireRateCoefficient(2);
         yield return new WaitForSeconds(3.0f);
+        opponent.setFireRateCoefficient(1);
     }
 }

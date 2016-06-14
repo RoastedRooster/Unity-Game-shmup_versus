@@ -72,6 +72,7 @@ public class PlayerBehavior : MonoBehaviour {
             powerUp.setPlayer(gameObject);
             GameObject opponent = findOpponent();
             powerUp.setOpponent(opponent);
+            powerUp.activateBonus();
         }
     }
 
@@ -81,6 +82,7 @@ public class PlayerBehavior : MonoBehaviour {
             powerUp.setPlayer(gameObject);
             GameObject opponent = findOpponent();
             powerUp.setOpponent(opponent);
+            powerUp.activateMalus();
         }
     }
 
@@ -99,6 +101,7 @@ public class PlayerBehavior : MonoBehaviour {
     void catchPowerUp(GameObject powerUp) {
         if(actualPowerUp == null) {
             actualPowerUp = powerUp;
+            usePowerUpBonus();
         }
     }
 
