@@ -1,4 +1,5 @@
 ﻿using rr.agent.pattern;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,13 @@ using UnityEngine;
 namespace rr.wavesystem {
 
     [CreateAssetMenuAttribute(menuName = "Wave System/Wave")]
+    [Serializable]
     public class Wave : ScriptableObject {
 
         public const float NOT_TIMED = 0f;
 
         public float duration = Wave.NOT_TIMED;
-        public List<KeyValuePair<Spawn, float>> spawnList = new List<KeyValuePair<Spawn, float>>();
+        public List<Spawn> spawnList = new List<Spawn>();
 
         public bool IsCleared {
             get {
@@ -34,14 +36,14 @@ namespace rr.wavesystem {
 
         public float SpawnNext() {
             if(!IsSpawned) {
-                var spawn = spawnList[_nextSpawnIndex].Key;
+                var spawn = spawnList[_nextSpawnIndex];
                 var spawnObject = GameObject.Instantiate(spawn.enemyPrefab, spawn.spawnLocation.transform.position, Quaternion.identity) as GameObject;
                 spawnObject.GetComponent<AgentWithMovePattern>().pattern = spawn.movementPattern;
                 _spawnedList.Add(spawnObject);
 
                 _nextSpawnIndex++;
 
-                return spawnList[_nextSpawnIndex].Value;
+                return spawn.timeBeforeNextSpawn;
             }
 
             return 0;
