@@ -11,9 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ff10caf58a84645912a47e5ac4739c, type: 3}
   m_Name: Wave 1
   m_EditorClassIdentifier: 
-  spawnPeriod: 1
   duration: 0
-  spawnList:
-  - {fileID: 11400000, guid: acfd8bd898d7dfb4dbe5a252ab141dd0, type: 2}
-  - {fileID: 11400000, guid: acfd8bd898d7dfb4dbe5a252ab141dd0, type: 2}
-  - {fileID: 11400000, guid: acfd8bd898d7dfb4dbe5a252ab141dd0, type: 2}

@@ -45,8 +45,8 @@ namespace rr.wavesystem {
             }
 
             if(!_currentWave.IsSpawned && currentTime > _timeBeforeNextSpawn) {
-                _currentWave.SpawnNext();
-                _timeBeforeNextSpawn = currentTime + _currentWave.spawnPeriod;
+                var timeTilNext = _currentWave.SpawnNext();
+                _timeBeforeNextSpawn = currentTime + timeTilNext;
             }
         }
 
@@ -80,16 +80,11 @@ namespace rr.wavesystem {
                         var div = Mathf.FloorToInt(waveCount / waveTypesCount);
                         var mod = waveCount % waveTypesCount;
 
-                        var totalPeriod = 0f;
-                        var totalWave = 0;
-
                         Wave tmpWave;
                         if(mod > 0) {
                             tmpWave = waveList[mod];
                             combinedWave.spawnList.AddRange(tmpWave.spawnList);
                             combinedWave.duration += tmpWave.duration;
-                            totalPeriod += tmpWave.spawnPeriod;
-                            totalWave++;
                         }
 
                         if(div > 0) {
@@ -97,12 +92,8 @@ namespace rr.wavesystem {
                             for(var i = 0; i < div; i++) {
                                 combinedWave.spawnList.AddRange(tmpWave.spawnList);
                                 combinedWave.duration += tmpWave.duration;
-                                totalPeriod += tmpWave.spawnPeriod;
-                                totalWave++;
                             }
                         }
-
-                        combinedWave.spawnPeriod = totalPeriod / totalWave;
 
                         return combinedWave;
 
