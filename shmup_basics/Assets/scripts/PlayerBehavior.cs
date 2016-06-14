@@ -15,7 +15,6 @@ public class PlayerBehavior : MonoBehaviour {
     private float fireRateCoefficient = 1;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
-    private GameObject actualPowerUp = null;
 
     public void setControllerIndex(int i) {
         ControllerIndex = i;
@@ -65,46 +64,7 @@ public class PlayerBehavior : MonoBehaviour {
     public void win() {
         Debug.Log("Player " + name + " win !");
     }
-
-    void usePowerUpBonus() {
-        if(actualPowerUp != null) {
-            PowerUpBehavior powerUp = actualPowerUp.GetComponent<PowerUpBehavior>();
-            powerUp.setPlayer(gameObject);
-            GameObject opponent = findOpponent();
-            powerUp.setOpponent(opponent);
-            powerUp.activateBonus();
-        }
-    }
-
-    void usePowerUpMalus() {
-        if(actualPowerUp != null) {
-            PowerUpBehavior powerUp = actualPowerUp.GetComponent<PowerUpBehavior>();
-            powerUp.setPlayer(gameObject);
-            GameObject opponent = findOpponent();
-            powerUp.setOpponent(opponent);
-            powerUp.activateMalus();
-        }
-    }
-
-    GameObject findOpponent() {
-        GameObject[] players;
-        players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject opponent = null;
-        foreach (GameObject player in players) {
-            if (player != this) {
-                opponent = player;
-            }
-        }
-        return opponent;
-    }
-
-    void catchPowerUp(GameObject powerUp) {
-        if(actualPowerUp == null) {
-            actualPowerUp = powerUp;
-            usePowerUpBonus();
-        }
-    }
-
+    
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.transform.tag == "bullet") {
             // Damage player
@@ -112,9 +72,6 @@ public class PlayerBehavior : MonoBehaviour {
 
             // Destroy the player
 			GameObject.Destroy (coll.gameObject);
-		} else if (coll.transform.tag == "powerup") {
-            catchPowerUp(coll.gameObject);
-            GameObject.Destroy(coll.gameObject);
-        }
+		}
 	}
 }

@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deebe4328ab124e4eb5502ff236b2bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 8d599094e96b7af40ade4ea95d2d1c0c, type: 2}
+  weapon: {fileID: 11400000, guid: b589f3bd8dbf9e842923b0d5cecffdf4, type: 2}
 --- !u!114 &11473484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,6 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb7aa8bb57c44a64a8c5cc1e9ecf54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurveSpeed: 5
+  MoveSpeed: 1
+  curvMag: 1
 --- !u!212 &21241788
 SpriteRenderer:
   m_ObjectHideFlags: 1
