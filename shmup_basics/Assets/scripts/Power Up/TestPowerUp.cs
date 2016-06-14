@@ -2,23 +2,25 @@
 using System.Collections;
 using System;
 
-public class TestPowerUp : MonoBehaviour, IPowerUp {
+public class TestPowerUp : PowerUp {
 
-    void IPowerUp.bonus() {
-        throw new NotImplementedException();
+    override public void bonus(PlayerBehavior player) {
+        StartCoroutine(IncreasePlayerFireRate(player));
     }
 
-    void IPowerUp.malus() {
-        throw new NotImplementedException();
+    override public void malus(PlayerBehavior opponent) {
+        StartCoroutine(DecreaseOpponentFireRate(opponent));
     }
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    IEnumerator IncreasePlayerFireRate(PlayerBehavior player) {
+        player.setFireRateCoefficient(0.5f);
+        yield return new WaitForSeconds(3.0f);
+        player.setFireRateCoefficient(1);
+    }
+
+    IEnumerator DecreaseOpponentFireRate(PlayerBehavior opponent) {
+        opponent.setFireRateCoefficient(2);
+        yield return new WaitForSeconds(3.0f);
+        opponent.setFireRateCoefficient(1);
+    }
 }

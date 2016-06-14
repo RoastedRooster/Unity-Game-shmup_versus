@@ -12,6 +12,7 @@ public class PlayerBehavior : MonoBehaviour {
     [SerializeField]
     private float health = 5;
     private float startingHealth;
+    private float fireRateCoefficient = 1;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
     private GameObject actualPowerUp = null;
@@ -22,6 +23,14 @@ public class PlayerBehavior : MonoBehaviour {
 
     public int getControllerIndex() {
         return ControllerIndex;
+    }
+
+    public float getFireRateCoefficient() {
+        return fireRateCoefficient;
+    }
+
+    public void setFireRateCoefficient(float newValue) {
+        fireRateCoefficient = newValue;
     }
 
     void Awake() {
@@ -57,10 +66,42 @@ public class PlayerBehavior : MonoBehaviour {
         Debug.Log("Player " + name + " win !");
     }
 
+    void usePowerUpBonus() {
+        if(actualPowerUp != null) {
+            PowerUpBehavior powerUp = actualPowerUp.GetComponent<PowerUpBehavior>();
+            powerUp.setPlayer(gameObject);
+            GameObject opponent = findOpponent();
+            powerUp.setOpponent(opponent);
+            powerUp.activateBonus();
+        }
+    }
+
+    void usePowerUpMalus() {
+        if(actualPowerUp != null) {
+            PowerUpBehavior powerUp = actualPowerUp.GetComponent<PowerUpBehavior>();
+            powerUp.setPlayer(gameObject);
+            GameObject opponent = findOpponent();
+            powerUp.setOpponent(opponent);
+            powerUp.activateMalus();
+        }
+    }
+
+    GameObject findOpponent() {
+        GameObject[] players;
+        players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject opponent = null;
+        foreach (GameObject player in players) {
+            if (player != this) {
+                opponent = player;
+            }
+        }
+        return opponent;
+    }
+
     void catchPowerUp(GameObject powerUp) {
         if(actualPowerUp == null) {
             actualPowerUp = powerUp;
-            // powerUp.GetComponent<PowerUpBehavior>();
+            usePowerUpBonus();
         }
     }
 

@@ -5,9 +5,11 @@ using System.Collections;
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class PowerUpBehavior : MonoBehaviour {
-    public IPowerUp powerUp;
+    public PowerUp powerUp;
 
     private Rigidbody2D rb2d;
+    private PlayerBehavior player;
+    private PlayerBehavior opponent;
 
     // Use this for initialization
     void Start () {
@@ -16,10 +18,18 @@ public class PowerUpBehavior : MonoBehaviour {
     }
 
     public void activateBonus() {
-        powerUp.bonus();
+        powerUp.bonus(player);
     }
 
     public void activateMalus() {
-        powerUp.malus();
+        powerUp.malus(opponent);
+    }
+
+    public void setPlayer(GameObject player) {
+        this.player = player.GetComponent<PlayerBehavior>();
+    }
+
+    public void setOpponent(GameObject opponent) {
+        this.opponent = opponent.GetComponent<PlayerBehavior>();
     }
 }

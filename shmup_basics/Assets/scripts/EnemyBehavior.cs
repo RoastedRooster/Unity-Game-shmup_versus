@@ -5,7 +5,7 @@ public class EnemyBehavior : MonoBehaviour {
 
     [SerializeField]
     private float health = 2;
-
+    private float fireRateCoefficient = 1;
     private ShooterBehavior weapon;
 
     void Awake() {
@@ -25,5 +25,13 @@ public class EnemyBehavior : MonoBehaviour {
             health -= coll.GetComponent<BulletBehavior>().getDamage();
             GameObject.Destroy (coll.gameObject);
         }
+    }
+
+    public float getFireRateCoefficient() {
+        return fireRateCoefficient;
+    }
+
+    public void setFireRateCoefficient(float newValue) {
+        fireRateCoefficient = newValue;
     }
 }
