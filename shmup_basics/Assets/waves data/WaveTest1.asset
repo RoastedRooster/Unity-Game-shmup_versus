@@ -13,19 +13,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   spawnList:
-  - spawnLocation: {fileID: 408014, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
+  - spawnLocation: {fileID: 106766, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
     movementPattern: {fileID: 11400000, guid: a1179dfc9837a254dbdac0021a084a04, type: 2}
     timeBeforeNextSpawn: 0
-  - spawnLocation: {fileID: 476394, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
+  - spawnLocation: {fileID: 104470, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
     movementPattern: {fileID: 11400000, guid: cc195e4fe5a0b4fa280ff33f8d6e3ca3, type: 2}
     timeBeforeNextSpawn: 2
-  - spawnLocation: {fileID: 408014, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
+  - spawnLocation: {fileID: 106766, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
     movementPattern: {fileID: 11400000, guid: a1179dfc9837a254dbdac0021a084a04, type: 2}
     timeBeforeNextSpawn: 0
-  - spawnLocation: {fileID: 0}
+  - spawnLocation: {fileID: 104470, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
     movementPattern: {fileID: 11400000, guid: cc195e4fe5a0b4fa280ff33f8d6e3ca3, type: 2}
     timeBeforeNextSpawn: 2
