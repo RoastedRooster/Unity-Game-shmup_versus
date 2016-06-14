@@ -38,7 +38,7 @@ namespace rr.wavesystem {
             if(_currentWave == null || (_timeBeforeNextWave > 0 && _timeBeforeNextWave < currentTime) || _currentWave.IsSpawned && _currentWave.IsCleared) {
                 _currentWave = GetNextWave();
             }
-            
+
             if(_currentWave == null) {
                 _stopped = true;
                 return;
@@ -76,7 +76,7 @@ namespace rr.wavesystem {
 
                         Wave combinedWave = ScriptableObject.CreateInstance<Wave>();
                         var waveTypesCount = waveList.Count;
-                        
+
                         var div = Mathf.FloorToInt(waveCount / waveTypesCount);
                         var mod = waveCount % waveTypesCount;
 

@@ -15,6 +15,9 @@ namespace rr.wavesystem {
         public float duration = Wave.NOT_TIMED;
         public List<Spawn> spawnList = new List<Spawn>();
 
+        private int _nextSpawnIndex = 0;
+        private List<GameObject> _spawnedList = new List<GameObject>();
+
         public bool IsCleared {
             get {
                 foreach (var spawned in _spawnedList) {
@@ -30,9 +33,6 @@ namespace rr.wavesystem {
                 return _nextSpawnIndex >= spawnList.Count;
             }
         }
-
-        private int _nextSpawnIndex = 0;
-        private List<GameObject> _spawnedList = new List<GameObject>();
 
         public float SpawnNext() {
             if(!IsSpawned) {
