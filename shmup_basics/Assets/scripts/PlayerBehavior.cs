@@ -8,10 +8,10 @@ public class PlayerBehavior : MonoBehaviour {
     public float vMaxSpeed = 150f;
 
     public GameObject startingPoint;
-
-    [SerializeField]
+    
     private float health = 5;
     private float startingHealth;
+    [SerializeField]
     private float fireRateCoefficient = 1;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;

@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11438632}
   - 50: {fileID: 5039692}
   - 61: {fileID: 6177650}
+  - 114: {fileID: 11482006}
   m_Layer: 0
   m_Name: powerup
   m_TagString: powerup
@@ -73,6 +74,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b095eb41460316f4bad11547d6e596e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11482006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 046a351085984834697448264251459c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
 --- !u!212 &21236836
 SpriteRenderer:
   m_ObjectHideFlags: 1

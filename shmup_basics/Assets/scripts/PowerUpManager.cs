@@ -1,96 +1,123 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PowerUpManager : MonoBehaviour {
 
-    private GameObject handheldPowerUp;
+    public struct PowerUpObject {
+        public float startTime;
+        public float endTime;
+        public PowerUp powerUp;
 
-    private PowerUp[] activeBonus;
-    private PowerUp[] activeMalus;
+        public PowerUpObject(PowerUp powerUp) {
+            this.powerUp = powerUp;
+            this.endTime = 0.0f;
+            this.startTime = 0.0f;
+        }
 
-    private GameObject player;
-    private GameObject opponent;
+        public void setStartTime(float time) {
+            this.startTime = time;
+        }
+
+        public void setEndTime(float time) {
+            this.endTime = time;
+        }
+    }
+
+    private PowerUpObject handheldPowerUp;
+
+    private int controllerIndex;
+
+    private List<PowerUpObject> activeBonus = new List<PowerUpObject>();
+    private List<PowerUpObject> activeMalus = new List<PowerUpObject>();
+
+    private PlayerBehavior player;
+    private PlayerBehavior opponent;
 
     void Start () {
-        activeBonus = null;
-        activeMalus = null;
+        handheldPowerUp = new PowerUpObject();
+        controllerIndex = GetComponent<PlayerBehavior>().ControllerIndex;
+
+        player = GetComponent<PlayerBehavior>();
+        opponent = findOpponent();
     }
 	
 	void Update () {
-        /*
+        if (handheldPowerUp.powerUp != null) {
+
+            Debug.Log(handheldPowerUp.powerUp);
+
+            if (Input.GetButton("Bonus_" + controllerIndex)) {
+                Debug.Log("BONUS");
+                activateBonus();
+            }
+
+            if (Input.GetButton("Malus_" + controllerIndex)) {
+                Debug.Log("MALUS");
+                activateMalus();
+            }
+        }
+
         foreach (var bonus in activeBonus) {
-            // if(bonus.duration )
+
+            if(bonus.startTime == 0.0f) {
+                bonus.powerUp.activateBonus(GetComponent<PlayerBehavior>());
+                bonus.setStartTime(Time.time);
+                bonus.setEndTime(Time.time + bonus.powerUp.duration);
+            }
+
+            if(bonus.endTime >= Time.time) {
+                bonus.powerUp.deactivateBonus(player);
+                activeBonus.Remove(bonus);
+            }
         }
 
         foreach (var malus in activeMalus) {
-            // if(bonus.duration )
-        }
-        */
-    }
+            if (malus.startTime == 0.0f) {
+                malus.powerUp.activateMalus(GetComponent<PlayerBehavior>());
+                malus.setStartTime(Time.time);
+                malus.setEndTime(Time.time + malus.powerUp.duration);
+            }
 
-    /*
+            if (malus.endTime >= Time.time) {
+                malus.powerUp.deactivateMalus(player);
+                activeMalus.Remove(malus);
+            }
+        }
+    }
+    
     public void activateBonus() {
-        powerUp.activateBonus(player);
+        activeBonus.Add(new PowerUpObject(handheldPowerUp.powerUp));
+        handheldPowerUp.powerUp = null;
     }
 
     public void activateMalus() {
-        powerUp.activateMalus(opponent);
+        opponent.GetComponent<PowerUpManager>().addMalus(handheldPowerUp.powerUp);
+        handheldPowerUp.powerUp = null;
     }
 
-    public void setPlayer(GameObject player) {
-        this.player = player.GetComponent<PlayerBehavior>();
+    public void addMalus(PowerUp malus) {
+        activeMalus.Add(new PowerUpObject(malus));
     }
-
-    public void setOpponent(GameObject opponent) {
-        this.opponent = opponent.GetComponent<PlayerBehavior>();
-    }
-    */
 
     void OnTriggerEnter2D(Collider2D coll) {
         if (coll.transform.tag == "powerup") {
-            // catchPowerUp(coll.gameObject);
-            GameObject.Destroy(coll.gameObject);
+            if (handheldPowerUp.powerUp == null) {
+                handheldPowerUp.powerUp = coll.gameObject.GetComponent<PowerUp>();
+            }
+
+            coll.gameObject.SetActive(false);
         }
     }
 
-    /*
-    void usePowerUpBonus() {
-        if (actualPowerUp != null) {
-            PowerUpBehavior powerUp = actualPowerUp.GetComponent<PowerUpBehavior>();
-            // powerUp.setPlayer(gameObject);
-            GameObject opponent = findOpponent();
-            // powerUp.setOpponent(opponent);
-            // powerUp.activateBonus();
-        }
-    }
-
-    void usePowerUpMalus() {
-        if (actualPowerUp != null) {
-            PowerUpBehavior powerUp = actualPowerUp.GetComponent<PowerUpBehavior>();
-            // powerUp.setPlayer(gameObject);
-            GameObject opponent = findOpponent();
-            // powerUp.setOpponent(opponent);
-            // powerUp.activateMalus();
-        }
-    }
-
-    GameObject findOpponent() {
+    PlayerBehavior findOpponent() {
         GameObject[] players;
         players = GameObject.FindGameObjectsWithTag("Player");
         GameObject opponent = null;
         foreach (GameObject player in players) {
-            if (player != this) {
+            if (player != this.gameObject) {
                 opponent = player;
             }
         }
-        return opponent;
+        return opponent.GetComponent<PlayerBehavior>();
     }
-
-    void catchPowerUp(GameObject powerUp) {
-        if (actualPowerUp == null) {
-            actualPowerUp = powerUp;
-            usePowerUpBonus();
-        }
-    }
-    */
 }
