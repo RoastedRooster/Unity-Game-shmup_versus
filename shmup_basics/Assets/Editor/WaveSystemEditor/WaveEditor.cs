@@ -12,7 +12,7 @@ namespace rr.editor.wavesystem {
         SerializedProperty duration;
 
         public GameObject newEnemy = null;
-        public GameObject newLocation = null;
+        public Transform newLocation = null;
         public MovePattern newPattern = null;
         public float newTime = 0f;
 
@@ -45,12 +45,14 @@ namespace rr.editor.wavesystem {
                 EditorGUILayout.LabelField("Spawn " + i, GUILayout.Width(75));
                 if (GUILayout.Button("X", GUILayout.Width(25))) {
                     spawnList.RemoveAt(i);
+                    EditorUtility.SetDirty(currentWave);
+                    AssetDatabase.SaveAssets();
                 }
                 EditorGUILayout.EndHorizontal();
 
                 EditorGUI.indentLevel += 1;
                 currentSpawn.enemyPrefab = EditorGUILayout.ObjectField("Object to spawn", currentSpawn.enemyPrefab, typeof(GameObject), false) as GameObject;
-                currentSpawn.spawnLocation = EditorGUILayout.ObjectField("Where to spawn", currentSpawn.spawnLocation, typeof(GameObject), true) as GameObject;
+                currentSpawn.spawnLocation = EditorGUILayout.ObjectField("Where to spawn", currentSpawn.spawnLocation, typeof(GameObject), false) as Transform;
                 currentSpawn.movementPattern = EditorGUILayout.ObjectField("Movement pattern to apply", currentSpawn.movementPattern, typeof(MovePattern), false) as MovePattern;
                 currentSpawn.timeBeforeNextSpawn = EditorGUILayout.FloatField("Time before next spawn", currentSpawn.timeBeforeNextSpawn);
                 EditorGUI.indentLevel -= 1;
@@ -65,7 +67,7 @@ namespace rr.editor.wavesystem {
 
             EditorGUI.indentLevel += 1;
             newEnemy = EditorGUILayout.ObjectField("Object to spawn", newEnemy, typeof(GameObject), false) as GameObject;
-            newLocation = EditorGUILayout.ObjectField("Where to spawn", newLocation, typeof(GameObject), true) as GameObject;
+            newLocation = EditorGUILayout.ObjectField("Where to spawn", newLocation, typeof(GameObject), false) as Transform;
             newPattern = EditorGUILayout.ObjectField("Movement pattern to apply", newPattern, typeof(MovePattern), false) as MovePattern;
             newTime = EditorGUILayout.FloatField("Time before next spawn", newTime);
             if (GUILayout.Button("Add", GUILayout.Width(50))) {
