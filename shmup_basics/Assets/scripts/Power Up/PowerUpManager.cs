@@ -40,7 +40,7 @@ public class PowerUpManager : MonoBehaviour {
         player = GetComponent<PlayerBehavior>();
         opponent = findOpponent();
     }
-	
+
 	void Update () {
         if (handheldPowerUp.powerUp != null) {
 
@@ -56,7 +56,7 @@ public class PowerUpManager : MonoBehaviour {
                 activateMalus();
             }
         }
-        
+
         for (int i = 0; i < activeBonus.Count; i++) {
             PowerUpObject bonus = activeBonus[i];
 
@@ -71,7 +71,7 @@ public class PowerUpManager : MonoBehaviour {
                 activeBonus.Remove(bonus);
             }
         }
-        
+
         for (int i = 0; i < activeMalus.Count; i++) {
             PowerUpObject malus = activeMalus[i];
 
@@ -87,7 +87,7 @@ public class PowerUpManager : MonoBehaviour {
             }
         }
     }
-    
+
     public void activateBonus() {
         activeBonus.Add(new PowerUpObject(handheldPowerUp.powerUp));
         handheldPowerUp.powerUp = null;
