@@ -30,6 +30,7 @@ GameObject:
   - 50: {fileID: 5089480}
   - 114: {fileID: 11497134}
   - 95: {fileID: 9586242}
+  - 114: {fileID: 11429152}
   m_Layer: 10
   m_Name: char_evil
   m_TagString: Player
@@ -136,6 +137,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: b589f3bd8dbf9e842923b0d5cecffdf4, type: 2}
+--- !u!114 &11429152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1430b8d1945349743be941b08ed337a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11497134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,7 +163,7 @@ MonoBehaviour:
   hMaxSpeed: 175
   vMaxSpeed: 150
   startingPoint: {fileID: 0}
-  health: 5
+  fireRateCoefficient: 1
 --- !u!212 &21211250
 SpriteRenderer:
   m_ObjectHideFlags: 1

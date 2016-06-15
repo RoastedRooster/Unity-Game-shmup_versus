@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 public class PowerUpManager : MonoBehaviour {
 
-    public struct PowerUpObject {
+    public class PowerUpObject {
         public float startTime;
         public float endTime;
         public PowerUp powerUp;
 
         public PowerUpObject(PowerUp powerUp) {
             this.powerUp = powerUp;
-            this.endTime = 0.0f;
-            this.startTime = 0.0f;
+            this.endTime = 0;
+            this.startTime = 0;
         }
 
         public void setStartTime(float time) {
@@ -34,7 +34,7 @@ public class PowerUpManager : MonoBehaviour {
     private PlayerBehavior opponent;
 
     void Start () {
-        handheldPowerUp = new PowerUpObject();
+        handheldPowerUp = new PowerUpObject(null);
         controllerIndex = GetComponent<PlayerBehavior>().ControllerIndex;
 
         player = GetComponent<PlayerBehavior>();
@@ -56,29 +56,32 @@ public class PowerUpManager : MonoBehaviour {
                 activateMalus();
             }
         }
+        
+        for (int i = 0; i < activeBonus.Count; i++) {
+            PowerUpObject bonus = activeBonus[i];
 
-        foreach (var bonus in activeBonus) {
-
-            if(bonus.startTime == 0.0f) {
+            if (bonus.startTime == 0) {
                 bonus.powerUp.activateBonus(GetComponent<PlayerBehavior>());
                 bonus.setStartTime(Time.time);
                 bonus.setEndTime(Time.time + bonus.powerUp.duration);
             }
 
-            if(bonus.endTime >= Time.time) {
+            if (bonus.endTime <= Time.time) {
                 bonus.powerUp.deactivateBonus(player);
                 activeBonus.Remove(bonus);
             }
         }
+        
+        for (int i = 0; i < activeMalus.Count; i++) {
+            PowerUpObject malus = activeMalus[i];
 
-        foreach (var malus in activeMalus) {
             if (malus.startTime == 0.0f) {
                 malus.powerUp.activateMalus(GetComponent<PlayerBehavior>());
                 malus.setStartTime(Time.time);
                 malus.setEndTime(Time.time + malus.powerUp.duration);
             }
 
-            if (malus.endTime >= Time.time) {
+            if (malus.endTime <= Time.time) {
                 malus.powerUp.deactivateMalus(player);
                 activeMalus.Remove(malus);
             }
