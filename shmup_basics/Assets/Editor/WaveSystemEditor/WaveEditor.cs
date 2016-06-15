@@ -58,6 +58,7 @@ namespace rr.editor.wavesystem {
                 EditorGUI.indentLevel -= 1;
             }
             if (GUILayout.Button("Save", GUILayout.Width(50))) {
+                EditorUtility.SetDirty(currentWave);
                 AssetDatabase.SaveAssets();
             }
 
