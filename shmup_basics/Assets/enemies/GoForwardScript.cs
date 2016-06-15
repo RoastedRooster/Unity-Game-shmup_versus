@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using DG.Tweening;
 
 public class GoForwardScript : MonoBehaviour {
-    
+
      public float CurveSpeed = 5;
      public float MoveSpeed = 1;
      public float curvMag = 1;
