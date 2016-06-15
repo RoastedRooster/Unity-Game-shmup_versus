@@ -35,6 +35,7 @@ namespace rr.wavesystem {
         }
 
         public float SpawnNext() {
+            Debug.Log(IsSpawned);
             if(!IsSpawned) {
                 var spawn = spawnList[_nextSpawnIndex];
                 var spawnObject = GameObject.Instantiate(spawn.enemyPrefab, spawn.spawnLocation.transform.position, Quaternion.identity) as GameObject;
@@ -43,6 +44,7 @@ namespace rr.wavesystem {
 
                 _nextSpawnIndex++;
 
+                Debug.Log(spawn.timeBeforeNextSpawn);
                 return spawn.timeBeforeNextSpawn;
             }
 

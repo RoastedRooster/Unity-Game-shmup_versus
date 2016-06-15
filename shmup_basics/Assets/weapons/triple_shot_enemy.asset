@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: triple_shot_enemy
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   fireRate: 1
-  bulletSpeed: 200
+  bulletSpeed: 250
   bullets:
   - {fileID: 153776, guid: 9a6b3991dc4cb9f4aa6664428909b273, type: 2}
   - {fileID: 153776, guid: 2b51b6dafbbe12241aa472837211a7c2, type: 2}

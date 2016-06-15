@@ -47,6 +47,7 @@ namespace rr.wavesystem {
             if(!_currentWave.IsSpawned && currentTime > _timeBeforeNextSpawn) {
                 var timeTilNext = _currentWave.SpawnNext();
                 _timeBeforeNextSpawn = currentTime + timeTilNext;
+                Debug.Log(_timeBeforeNextSpawn);
             }
         }
 

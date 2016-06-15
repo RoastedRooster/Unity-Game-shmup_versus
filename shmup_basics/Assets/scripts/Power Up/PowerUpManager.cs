@@ -44,15 +44,11 @@ public class PowerUpManager : MonoBehaviour {
 	void Update () {
         if (handheldPowerUp.powerUp != null) {
 
-            Debug.Log(handheldPowerUp.powerUp);
-
             if (Input.GetButton("Bonus_" + controllerIndex)) {
-                Debug.Log("BONUS");
                 activateBonus();
             }
 
             if (Input.GetButton("Malus_" + controllerIndex)) {
-                Debug.Log("MALUS");
                 activateMalus();
             }
         }
