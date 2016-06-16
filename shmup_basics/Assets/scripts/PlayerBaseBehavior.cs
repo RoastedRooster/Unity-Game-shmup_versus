@@ -12,6 +12,16 @@ public class PlayerBaseBehavior : MonoBehaviour {
 	void Update () {
 	    if(health <= 0) {
             enemy.GetComponent<PlayerBehavior>().win();
+            
+            // With the reference from the opponent we can his name
+            // and make it win
+            string name = enemy.transform.name.Split('_')[1];
+            if (name == "evil") {
+                GameObject.Find("GameScreenUI").GetComponent<UIManager>().evilPlayerWin();
+            } else {
+                GameObject.Find("GameScreenUI").GetComponent<UIManager>().soldierPlayerWin();
+            }
+            
         }
 	}
 
