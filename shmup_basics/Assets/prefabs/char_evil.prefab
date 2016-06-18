@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -242, y: -241, z: 0}
+  m_LocalPosition: {x: 232, y: -241, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466114}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deebe4328ab124e4eb5502ff236b2bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: f6a5d91925256b449b68aa488530dfcc, type: 2}
 --- !u!114 &11429152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872486b9ac7dbec4fb3d9a1413c4e586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ControllerIndex: 1
+  ControllerIndex: 2
   hMaxSpeed: 175
   vMaxSpeed: 150
   startingPoint: {fileID: 0}

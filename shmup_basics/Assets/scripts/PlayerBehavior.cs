@@ -15,6 +15,7 @@ public class PlayerBehavior : MonoBehaviour {
     private float fireRateCoefficient = 1;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
+    private string playerName;
 
     public void setControllerIndex(int i) {
         ControllerIndex = i;
@@ -32,10 +33,11 @@ public class PlayerBehavior : MonoBehaviour {
         fireRateCoefficient = newValue;
     }
 
-    void Awake() {
+    void Start() {
         rb2d = GetComponent<Rigidbody2D>();
         weapon = gameObject.GetComponentInChildren<ShooterBehavior>();
         startingHealth = health;
+        playerName = transform.name.Split('_')[1];
     }
 
     void Update() {
@@ -48,6 +50,8 @@ public class PlayerBehavior : MonoBehaviour {
         // TODO : Explosioooooon
         transform.position = startingPoint.transform.position;
         health = startingHealth;
+        Debug.Log(playerName);
+        GameObject.Find("GameScreenUI").GetComponent<UIManager>().resetPlayerLife(playerName);
     }
 
     void FixedUpdate() {
@@ -66,12 +70,25 @@ public class PlayerBehavior : MonoBehaviour {
     }
     
 	void OnTriggerEnter2D(Collider2D coll) {
-		if (coll.transform.tag == "bullet") {
-            // Damage player
-            health -= coll.GetComponent<BulletBehavior>().getDamage();
+        if (coll.transform.tag == "bullet") {
+            float damage = coll.GetComponent<BulletBehavior>().getDamage();
+            float[] indexes = new float[(int) damage];
+            indexes.Initialize();
+            
+            for (int i = 0; i < damage; i++) {
+                if(health > 0) {
+                    // Stock life icone to remove
+                    indexes[i] = health;
+                }
+                // Damage player
+                health -= 1;
+            }
 
-            // Destroy the player
-			GameObject.Destroy (coll.gameObject);
+            // Hide loosed life icon(s)
+            GameObject.Find("GameScreenUI").GetComponent<UIManager>().playerTakeDamage(playerName, indexes);
+
+            // Destroy the bullet
+            GameObject.Destroy (coll.gameObject);
 		}
 	}
 }
