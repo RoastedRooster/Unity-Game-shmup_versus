@@ -312,7 +312,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22473360, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 341.46585
+      value: 341.5149
       objectReference: {fileID: 0}
     - target: {fileID: 22473360, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -320,7 +320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22473360, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 682.9317
+      value: 683.0298
       objectReference: {fileID: 0}
     - target: {fileID: 22473360, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_SizeDelta.y
@@ -336,7 +336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22438580, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1024.3976
+      value: 1024.5447
       objectReference: {fileID: 0}
     - target: {fileID: 22438580, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_AnchoredPosition.y
@@ -344,7 +344,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22438580, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 682.9317
+      value: 683.0298
       objectReference: {fileID: 0}
     - target: {fileID: 22438580, guid: d7af76b0e3160a4469a1ce08ebfdc593, type: 2}
       propertyPath: m_SizeDelta.y
@@ -718,6 +718,34 @@ Prefab:
       propertyPath: startingPoint
       value: 
       objectReference: {fileID: 1546048336}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 38a2de64103de1d45b18545b2d7c0e30, type: 2}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21297978, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
   m_IsPrefabParent: 0
@@ -768,6 +796,30 @@ Prefab:
       propertyPath: startingPoint
       value: 
       objectReference: {fileID: 670071419}
+    - target: {fileID: 21211250, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21211250, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21211250, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21211250, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21211250, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 256d57ceb63115e4ea4be0afb094573a, type: 2}
+    - target: {fileID: 21211250, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
   m_IsPrefabParent: 0
