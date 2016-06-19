@@ -11,7 +11,6 @@ public class PlayerBaseBehavior : MonoBehaviour {
 
     void Start() {
         playerName = transform.name.Split('_')[0];
-        Debug.Log(playerName);
     }
 	
 	// Update is called once per frame

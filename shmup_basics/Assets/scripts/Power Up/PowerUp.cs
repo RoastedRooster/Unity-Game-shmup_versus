@@ -1,10 +1,10 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 
 public class PowerUp : MonoBehaviour {
 
     public float duration;
+    public Sprite icon;
+
     public virtual void activateBonus(PlayerBehavior player) { }
     public virtual void deactivateBonus(PlayerBehavior player) { }
     public virtual void activateMalus(PlayerBehavior opponent) { }
