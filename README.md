@@ -15,5 +15,7 @@
 - On the new PowerUp inherited component you need to set the following properties :
     * Duration (type: float)
     * Icon (type: Sprite)
+    * bonusIcon (type: Sprite)
+    * malusIcon (type: Sprite)
 
 - PowerUpBehavior component add a SpriteRenderer where you must set the Sprite property
