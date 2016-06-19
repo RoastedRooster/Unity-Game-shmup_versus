@@ -422,10 +422,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11446642, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
-      propertyPath: endingMode
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
   m_IsPrefabParent: 0
@@ -567,15 +563,6 @@ Prefab:
     - target: {fileID: 402652, guid: 637985c69f4d0054888c6b047b296876, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11471372, guid: 637985c69f4d0054888c6b047b296876, type: 2}
-      propertyPath: waveList.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 22d8cfe366ba046e2bce1616ad379d04,
-        type: 2}
-    - target: {fileID: 11471372, guid: 637985c69f4d0054888c6b047b296876, type: 2}
-      propertyPath: endingMode
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 637985c69f4d0054888c6b047b296876, type: 2}

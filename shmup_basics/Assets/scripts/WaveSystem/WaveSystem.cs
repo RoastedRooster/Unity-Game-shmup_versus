@@ -17,16 +17,19 @@ namespace rr.wavesystem {
         public EndingMode endingMode = EndingMode.Stop;
         public List<Wave> waveList = new List<Wave>();
         public int waveCount = 0;
+        public string playerName;
 
         private int _currentWaveIndex = 0;
         private Wave _currentWave;
         private float _timeBeforeNextWave = -1f;
         private float _timeBeforeNextSpawn = 0f;
         private bool _stopped = false;
+        private UIManager uiManager;
 
         public void Start() {
             foreach (var wave in waveList)
                 wave.Reset();
+            uiManager = GameObject.Find("GameScreenUI").GetComponent<UIManager>();
         }
 
         public void Update() {
@@ -50,9 +53,14 @@ namespace rr.wavesystem {
             }
         }
 
+        void updateWaveCounter() {
+            waveCount++;
+            uiManager.updateWaveCounter(playerName, waveCount);
+        }
+
         protected Wave GetNextWave() {
             if (_currentWaveIndex < waveList.Count) {
-                waveCount++;
+                updateWaveCounter();
                 var nextWave = waveList[_currentWaveIndex];
                 _currentWaveIndex++;
                 return nextWave;
@@ -60,7 +68,7 @@ namespace rr.wavesystem {
             else {
                 switch(endingMode) {
                     case EndingMode.Restart:
-                        waveCount++;
+                        updateWaveCounter();
                         _currentWaveIndex = 0;
                         var nextWave = waveList[_currentWaveIndex];
                         nextWave.Reset();
@@ -68,11 +76,10 @@ namespace rr.wavesystem {
                     case EndingMode.InfiniteLast:
                         return _currentWave.Clone();
                     case EndingMode.LoopLast:
-                        waveCount++;
-                        Debug.Log(waveCount);
+                        updateWaveCounter();
                         return _currentWave.Clone();
                     case EndingMode.Combine:
-                        waveCount++;
+                        updateWaveCounter();
                         _currentWaveIndex++;
 
                         Wave combinedWave = ScriptableObject.CreateInstance<Wave>();

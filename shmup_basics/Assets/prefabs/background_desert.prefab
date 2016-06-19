@@ -71,6 +71,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -177.8, y: 314, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 483616}
   m_RootOrder: 1
@@ -83,6 +84,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 483616}
   m_RootOrder: 2
@@ -95,6 +97,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 185.3, y: 314, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 483616}
   m_RootOrder: 0
@@ -107,6 +110,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -225, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 476394}
   - {fileID: 408014}
@@ -124,10 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c152e4456b6294140b199723c095db06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endingMode: 0
+  endingMode: 3
   waveList:
   - {fileID: 11400000, guid: e52689154fc9f5f408bcac7d6d9b647c, type: 2}
   waveCount: 0
+  playerName: soldier
 --- !u!212 &21220968
 SpriteRenderer:
   m_ObjectHideFlags: 1

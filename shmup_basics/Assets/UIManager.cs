@@ -132,4 +132,13 @@ public class UIManager : MonoBehaviour {
             }
         }
     }
+
+    public void updateWaveCounter(string name, int wave) {
+        if (name == "evil") {
+            uiEvil.FindChild("Wave").gameObject.GetComponent<Text>().text = "Wave " + wave;
+        }
+        else {
+            uiSoldier.FindChild("Wave").gameObject.GetComponent<Text>().text = "Wave " + wave;
+        }
+    }
 }
