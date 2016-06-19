@@ -1,6 +1,6 @@
 # shmup_versus
 
-*How to add a new power up :*
+**How to add a new power up :**
 
 - Create new empty GameObject
 
