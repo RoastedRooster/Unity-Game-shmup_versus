@@ -101,6 +101,33 @@ public class PowerUpManager : MonoBehaviour {
         }
     }
 
+    public void reset() {
+        // Remove handheled powerup
+        handheldPowerUp.powerUp = null;
+        uiManager.resetPowerUp(playerName);
+
+        // Remove all actual bonus and malus
+        for (int i = 0; i < activeBonus.Count; i++) {
+            PowerUpObject bonus = activeBonus[i];
+            
+            // Remove bonus effect icon
+            uiManager.resetPowerUpEffect(playerName, "bonus");
+            // Deactivate bonus effect and remove it from the list
+            bonus.powerUp.deactivateBonus(player);
+            activeBonus.Remove(bonus);
+        }
+
+        for (int i = 0; i < activeMalus.Count; i++) {
+            PowerUpObject malus = activeMalus[i];
+
+            // Remove malus effect icon
+            uiManager.resetPowerUpEffect(playerName, "malus");
+            // Deactivate malus effect and remove it from the list
+            malus.powerUp.deactivateMalus(player);
+            activeMalus.Remove(malus);
+        }
+    }
+
     public void activateBonus() {
         activeBonus.Add(new PowerUpObject(handheldPowerUp.powerUp));
         uiManager.resetPowerUp(playerName);

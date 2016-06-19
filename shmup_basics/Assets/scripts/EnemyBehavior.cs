@@ -23,8 +23,16 @@ public class EnemyBehavior : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll) {
         if(coll.tag == "bullet" && coll.gameObject.layer == LayerMask.NameToLayer("bullet_player")) {
             health -= coll.GetComponent<BulletBehavior>().getDamage();
+            // Make enemy flash
+            StartCoroutine("flashEffect");
             GameObject.Destroy (coll.gameObject);
         }
+    }
+
+    IEnumerator flashEffect() {
+        GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0.75f);
+        yield return new WaitForSeconds(0.025f);
+        GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0f);
     }
 
     public float getFireRateCoefficient() {

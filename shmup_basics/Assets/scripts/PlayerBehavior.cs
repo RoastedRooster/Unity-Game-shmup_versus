@@ -53,6 +53,9 @@ public class PlayerBehavior : MonoBehaviour {
         transform.position = startingPoint.transform.position;
         health = startingHealth;
         uiManager.resetPlayerLife(playerName);
+
+        // Reset powerup and it's UI
+        GetComponent<PowerUpManager>().reset();
     }
 
     void FixedUpdate() {
@@ -69,13 +72,23 @@ public class PlayerBehavior : MonoBehaviour {
     public void win() {
         Debug.Log("Player " + name + " win !");
     }
+
+    IEnumerator flashEffect() {
+        GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0.75f);
+        yield return new WaitForSeconds(0.025f);
+        GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0f);
+    }
     
 	void OnTriggerEnter2D(Collider2D coll) {
         if (coll.transform.tag == "bullet") {
             float damage = coll.GetComponent<BulletBehavior>().getDamage();
             float[] indexes = new float[(int) damage];
             indexes.Initialize();
-            
+
+            // Make player flash
+            StartCoroutine("flashEffect");
+
+            // Damage the player
             for (int i = 0; i < damage; i++) {
                 if(health > 0) {
                     // Stock life icone to remove
