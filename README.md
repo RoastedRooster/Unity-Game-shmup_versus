@@ -1,6 +1,7 @@
 # shmup_versus
 
 How to add a new power up :
+
 	- Create new empty GameObject
 
 	- Add PowerUpBehavior component
