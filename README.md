@@ -8,10 +8,10 @@ How to add a new power up :
 
 - Add script component that inherit from PowerUp and override following methods :
 
-⋅⋅* activateBonus(PlayerBehavior player) { }
-⋅⋅* deactivateBonus(PlayerBehavior player) { }
-⋅⋅* activateMalus(PlayerBehavior opponent) { }
-⋅⋅* deactivateMalus(PlayerBehavior opponent) { }
+    ⋅⋅* activateBonus(PlayerBehavior player) { }
+    ⋅⋅* deactivateBonus(PlayerBehavior player) { }
+    ⋅⋅* activateMalus(PlayerBehavior opponent) { }
+    ⋅⋅* deactivateMalus(PlayerBehavior opponent) { }
 
 - On the new PowerUp inherited component you need to set the following properties :
     
