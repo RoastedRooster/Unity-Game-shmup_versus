@@ -69,6 +69,7 @@ namespace rr.wavesystem {
                         return _currentWave.Clone();
                     case EndingMode.LoopLast:
                         waveCount++;
+                        Debug.Log(waveCount);
                         return _currentWave.Clone();
                     case EndingMode.Combine:
                         waveCount++;

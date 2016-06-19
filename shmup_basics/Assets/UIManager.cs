@@ -31,11 +31,15 @@ public class UIManager : MonoBehaviour {
     public void playerTakeDamage(string name, float[] indexes) {
         if (name == "evil") {
             foreach (var index in indexes) {
-                uiEvil.FindChild("CharLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                if (uiEvil.FindChild("CharLife/" + index) != null) {
+                    uiEvil.FindChild("CharLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                }
             }
         } else {
             foreach (var index in indexes) {
-                uiSoldier.FindChild("CharLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                if(uiSoldier.FindChild("CharLife/" + index) != null) {
+                    uiSoldier.FindChild("CharLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                }
             }
         }
     }
@@ -43,12 +47,16 @@ public class UIManager : MonoBehaviour {
     public void baseTakeDamage(string name, int[] indexes) {
         if (name == "evil") {
             foreach (var index in indexes) {
-                uiEvil.FindChild("BaseLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                if(uiEvil.FindChild("BaseLife/" + index) != null) {
+                    uiEvil.FindChild("BaseLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                }
             }
         }
         else {
             foreach (var index in indexes) {
-                uiSoldier.FindChild("BaseLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                if(uiSoldier.FindChild("BaseLife/" + index) != null) {
+                    uiSoldier.FindChild("BaseLife/" + index).gameObject.GetComponent<Image>().enabled = false;
+                }
             }
         }
     }
@@ -56,12 +64,16 @@ public class UIManager : MonoBehaviour {
     public void resetPlayerLife(string name) {
         if (name == "evil") {
             for (int i = 1; i <= 5; i++) {
-                uiEvil.FindChild("CharLife/" + i).gameObject.GetComponent<Image>().enabled = true;
+                if (uiEvil.FindChild("CharLife/" + i) != null) {
+                    uiEvil.FindChild("CharLife/" + i).gameObject.GetComponent<Image>().enabled = true;
+                }
             }
         }
         else {
             for (int i = 1; i <= 5; i++) {
-                uiSoldier.FindChild("CharLife/" + i).gameObject.GetComponent<Image>().enabled = true;
+                if(uiSoldier.FindChild("CharLife/" + i)) {
+                    uiSoldier.FindChild("CharLife/" + i).gameObject.GetComponent<Image>().enabled = true;
+                }
             }
         }
     }
