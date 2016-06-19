@@ -42,6 +42,12 @@ namespace rr.wavesystem {
                 _currentWave = GetNextWave();
             }
 
+            if(_timeBeforeNextWave > 0) {
+                uiManager.updateWaveTimer(playerName, _timeBeforeNextWave);
+            } else {
+                uiManager.updateWaveTimer(playerName, 0);
+            }
+
             if(_currentWave == null) {
                 _stopped = true;
                 return;

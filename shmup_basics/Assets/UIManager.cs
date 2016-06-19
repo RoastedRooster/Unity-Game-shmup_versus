@@ -141,4 +141,13 @@ public class UIManager : MonoBehaviour {
             uiSoldier.FindChild("Wave").gameObject.GetComponent<Text>().text = "Wave " + wave;
         }
     }
+
+    public void updateWaveTimer(string name, float timer) {
+        if (name == "evil") {
+            uiEvil.FindChild("NextWave").gameObject.GetComponent<Text>().text = "Next wave : " + timer;
+        }
+        else {
+            uiSoldier.FindChild("NextWave").gameObject.GetComponent<Text>().text = "Next wave : " + timer;
+        }
+    }
 }
