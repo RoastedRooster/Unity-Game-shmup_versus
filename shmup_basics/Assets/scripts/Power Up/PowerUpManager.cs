@@ -62,6 +62,9 @@ public class PowerUpManager : MonoBehaviour {
             PowerUpObject bonus = activeBonus[i];
 
             if (bonus.startTime == 0) {
+                // Set active bonus powerup icon
+                uiManager.updatePowerUpEffect(playerName, "bonus", bonus.powerUp.bonusIcon);
+                // Activate bonus and calculate end time
                 bonus.powerUp.activateBonus(GetComponent<PlayerBehavior>());
                 bonus.setStartTime(Time.time);
                 bonus.setEndTime(Time.time + bonus.powerUp.duration);
@@ -80,6 +83,9 @@ public class PowerUpManager : MonoBehaviour {
             PowerUpObject malus = activeMalus[i];
 
             if (malus.startTime == 0.0f) {
+                // Set active malus powerup icon
+                uiManager.updatePowerUpEffect(playerName, "malus", malus.powerUp.malusIcon);
+                // Activate malus and calculate end time
                 malus.powerUp.activateMalus(GetComponent<PlayerBehavior>());
                 malus.setStartTime(Time.time);
                 malus.setEndTime(Time.time + malus.powerUp.duration);

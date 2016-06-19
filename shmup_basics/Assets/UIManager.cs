@@ -90,12 +90,12 @@ public class UIManager : MonoBehaviour {
                 uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = icon;
             }
             else {
-                uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = icon;
+                uiEvil.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = icon;
             }
         }
         else {
             if (powerUp == "bonus") {
-                uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = icon;
+                uiSoldier.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = icon;
             }
             else {
                 uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = icon;
@@ -108,12 +108,12 @@ public class UIManager : MonoBehaviour {
             if(powerUp == "bonus") {
                 uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = emptyBonusEffect;
             } else {
-                uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = emptyMalusEffect;
+                uiEvil.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = emptyMalusEffect;
             }
         }
         else {
             if (powerUp == "bonus") {
-                uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = emptyBonusEffect;
+                uiSoldier.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = emptyBonusEffect;
             }
             else {
                 uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = emptyMalusEffect;
