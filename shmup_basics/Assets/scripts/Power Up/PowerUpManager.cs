@@ -32,6 +32,8 @@ public class PowerUpManager : MonoBehaviour {
 
     private PlayerBehavior player;
     private PlayerBehavior opponent;
+    private string playerName;
+    private UIManager uiManager;
 
     void Start () {
         handheldPowerUp = new PowerUpObject(null);
@@ -39,6 +41,9 @@ public class PowerUpManager : MonoBehaviour {
 
         player = GetComponent<PlayerBehavior>();
         opponent = findOpponent();
+
+        playerName = transform.name.Split('_')[1];
+        uiManager = GameObject.Find("GameScreenUI").GetComponent<UIManager>();
     }
 
 	void Update () {
@@ -86,11 +91,13 @@ public class PowerUpManager : MonoBehaviour {
 
     public void activateBonus() {
         activeBonus.Add(new PowerUpObject(handheldPowerUp.powerUp));
+        uiManager.resetPowerUp(playerName);
         handheldPowerUp.powerUp = null;
     }
 
     public void activateMalus() {
         opponent.GetComponent<PowerUpManager>().addMalus(handheldPowerUp.powerUp);
+        uiManager.resetPowerUp(playerName);
         handheldPowerUp.powerUp = null;
     }
 
@@ -102,6 +109,10 @@ public class PowerUpManager : MonoBehaviour {
         if (coll.transform.tag == "powerup") {
             if (handheldPowerUp.powerUp == null) {
                 handheldPowerUp.powerUp = coll.gameObject.GetComponent<PowerUp>();
+                // Get powerup icon
+                Sprite icon = handheldPowerUp.powerUp.icon;
+                // Update UI powerup icon
+                uiManager.updatePowerUp(playerName, icon);
             }
 
             coll.gameObject.SetActive(false);

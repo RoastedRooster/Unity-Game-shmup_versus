@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerBaseBehavior : MonoBehaviour {
 
@@ -18,8 +17,7 @@ public class PlayerBaseBehavior : MonoBehaviour {
 	    if(health <= 0) {
             enemy.GetComponent<PlayerBehavior>().win();
             
-            // With the reference from the opponent we can find his name
-            // and make him win
+            // With the reference from the opponent we can find his name and make him win
             string name = enemy.transform.name.Split('_')[1];
             GameObject.Find("GameScreenUI").GetComponent<UIManager>().playerWin(name);
         }

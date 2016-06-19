@@ -6,15 +6,14 @@ public class UIManager : MonoBehaviour {
 
     private Transform uiSoldier;
     private Transform uiEvil;
+    private Sprite emptyPowerUp;
 
     void Start() {
         uiSoldier = transform.FindChild("UISoldierSide");
         uiEvil = transform.FindChild("UIEvilSide");
-
-
+        emptyPowerUp = uiSoldier.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite;
     }
 
-	// Use this for initialization
 	public void playerWin (string name) {
         if(name == "evil") {
             uiSoldier.FindChild("Lost").gameObject.GetComponent<Text>().enabled = true;
@@ -60,6 +59,24 @@ public class UIManager : MonoBehaviour {
             for (int i = 1; i <= 5; i++) {
                 uiSoldier.FindChild("CharLife/" + i).gameObject.GetComponent<Image>().enabled = true;
             }
+        }
+    }
+
+    public void updatePowerUp(string name, Sprite icon) {
+        if (name == "evil") {
+            uiEvil.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite = icon;
+        }
+        else {
+            uiSoldier.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite = icon;
+        }
+    }
+
+    public void resetPowerUp(string name) {
+        if (name == "evil") {
+            uiEvil.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite = emptyPowerUp;
+        }
+        else {
+            uiSoldier.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite = emptyPowerUp;
         }
     }
 }

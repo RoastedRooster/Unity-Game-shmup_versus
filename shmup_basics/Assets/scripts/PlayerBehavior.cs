@@ -16,6 +16,7 @@ public class PlayerBehavior : MonoBehaviour {
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
     private string playerName;
+    private UIManager uiManager;
 
     public void setControllerIndex(int i) {
         ControllerIndex = i;
@@ -38,6 +39,7 @@ public class PlayerBehavior : MonoBehaviour {
         weapon = gameObject.GetComponentInChildren<ShooterBehavior>();
         startingHealth = health;
         playerName = transform.name.Split('_')[1];
+        uiManager = GameObject.Find("GameScreenUI").GetComponent<UIManager>();
     }
 
     void Update() {
@@ -50,8 +52,7 @@ public class PlayerBehavior : MonoBehaviour {
         // TODO : Explosioooooon
         transform.position = startingPoint.transform.position;
         health = startingHealth;
-        Debug.Log(playerName);
-        GameObject.Find("GameScreenUI").GetComponent<UIManager>().resetPlayerLife(playerName);
+        uiManager.resetPlayerLife(playerName);
     }
 
     void FixedUpdate() {
@@ -85,7 +86,7 @@ public class PlayerBehavior : MonoBehaviour {
             }
 
             // Hide loosed life icon(s)
-            GameObject.Find("GameScreenUI").GetComponent<UIManager>().playerTakeDamage(playerName, indexes);
+            uiManager.playerTakeDamage(playerName, indexes);
 
             // Destroy the bullet
             GameObject.Destroy (coll.gameObject);
