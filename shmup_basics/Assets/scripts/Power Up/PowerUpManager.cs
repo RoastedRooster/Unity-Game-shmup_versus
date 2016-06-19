@@ -68,6 +68,9 @@ public class PowerUpManager : MonoBehaviour {
             }
 
             if (bonus.endTime <= Time.time) {
+                // Remove bonus effect icon
+                uiManager.resetPowerUpEffect(playerName, "bonus");
+                // Deactivate bonus effect and remove it from the list
                 bonus.powerUp.deactivateBonus(player);
                 activeBonus.Remove(bonus);
             }
@@ -83,6 +86,9 @@ public class PowerUpManager : MonoBehaviour {
             }
 
             if (malus.endTime <= Time.time) {
+                // Remove malus effect icon
+                uiManager.resetPowerUpEffect(playerName, "malus");
+                // Deactivate malus effect and remove it from the list
                 malus.powerUp.deactivateMalus(player);
                 activeMalus.Remove(malus);
             }

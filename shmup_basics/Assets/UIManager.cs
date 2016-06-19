@@ -7,11 +7,15 @@ public class UIManager : MonoBehaviour {
     private Transform uiSoldier;
     private Transform uiEvil;
     private Sprite emptyPowerUp;
+    private Sprite emptyBonusEffect;
+    private Sprite emptyMalusEffect;
 
     void Start() {
         uiSoldier = transform.FindChild("UISoldierSide");
         uiEvil = transform.FindChild("UIEvilSide");
         emptyPowerUp = uiSoldier.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite;
+        emptyBonusEffect = uiSoldier.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite;
+        emptyMalusEffect = uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite;
     }
 
 	public void playerWin (string name) {
@@ -77,6 +81,43 @@ public class UIManager : MonoBehaviour {
         }
         else {
             uiSoldier.FindChild("PowerUp").gameObject.GetComponent<Image>().sprite = emptyPowerUp;
+        }
+    }
+
+    public void updatePowerUpEffect(string name, string powerUp, Sprite icon) {
+        if (name == "evil") {
+            if (powerUp == "bonus") {
+                uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = icon;
+            }
+            else {
+                uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = icon;
+            }
+        }
+        else {
+            if (powerUp == "bonus") {
+                uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = icon;
+            }
+            else {
+                uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = icon;
+            }
+        }
+    }
+
+    public void resetPowerUpEffect(string name, string powerUp) {
+        if (name == "evil") {
+            if(powerUp == "bonus") {
+                uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = emptyBonusEffect;
+            } else {
+                uiEvil.FindChild("ActiveBonus").gameObject.GetComponent<Image>().sprite = emptyMalusEffect;
+            }
+        }
+        else {
+            if (powerUp == "bonus") {
+                uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = emptyBonusEffect;
+            }
+            else {
+                uiSoldier.FindChild("ActiveMalus").gameObject.GetComponent<Image>().sprite = emptyMalusEffect;
+            }
         }
     }
 }

@@ -4,6 +4,8 @@ public class PowerUp : MonoBehaviour {
 
     public float duration;
     public Sprite icon;
+    public Sprite bonusIcon;
+    public Sprite malusIcon;
 
     public virtual void activateBonus(PlayerBehavior player) { }
     public virtual void deactivateBonus(PlayerBehavior player) { }
