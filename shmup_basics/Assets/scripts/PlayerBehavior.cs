@@ -6,6 +6,7 @@ public class PlayerBehavior : MonoBehaviour {
     public int ControllerIndex;
     public float hMaxSpeed = 175f;
     public float vMaxSpeed = 150f;
+    public float invulnerabilityTime = 1.0f;
 
     public GameObject startingPoint;
     
@@ -17,6 +18,8 @@ public class PlayerBehavior : MonoBehaviour {
     private ShooterBehavior weapon;
     private string playerName;
     private UIManager uiManager;
+    private bool isInvulnerable;
+    private float invulnerabiltyEndTime = 0.0f;
 
     public void setControllerIndex(int i) {
         ControllerIndex = i;
@@ -75,34 +78,55 @@ public class PlayerBehavior : MonoBehaviour {
 
     IEnumerator flashEffect() {
         GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0.75f);
-        yield return new WaitForSeconds(0.025f);
+        yield return new WaitForEndOfFrame();
         GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0f);
+    }
+
+    IEnumerator onHitEffect() {
+        GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(0.15f);
+
+        if (Time.time >= invulnerabiltyEndTime) {
+            isInvulnerable = false;
+        } else {
+            StartCoroutine("onHitEffect");
+        }
     }
     
 	void OnTriggerEnter2D(Collider2D coll) {
         if (coll.transform.tag == "bullet") {
-            float damage = coll.GetComponent<BulletBehavior>().getDamage();
-            float[] indexes = new float[(int) damage];
-            indexes.Initialize();
+            if(!isInvulnerable) {
+                float damage = coll.GetComponent<BulletBehavior>().getDamage();
+                float[] indexes = new float[(int)damage];
+                indexes.Initialize();
 
-            // Make player flash
-            StartCoroutine("flashEffect");
+                // Make player flash
+                StartCoroutine("flashEffect");
+                // Start invulnerability effect
+                invulnerabiltyEndTime = Time.time + invulnerabilityTime;
+                Debug.Log(Time.time);
+                Debug.Log(invulnerabiltyEndTime);
+                isInvulnerable = true;
+                StartCoroutine("onHitEffect");
 
-            // Damage the player
-            for (int i = 0; i < damage; i++) {
-                if(health > 0) {
-                    // Stock life icone to remove
-                    indexes[i] = health;
+                // Damage the player
+                for (int i = 0; i < damage; i++) {
+                    if (health > 0) {
+                        // Stock life icone to remove
+                        indexes[i] = health;
+                    }
+                    // Damage player
+                    health -= 1;
                 }
-                // Damage player
-                health -= 1;
+
+                // Hide loosed life icon(s)
+                uiManager.playerTakeDamage(playerName, indexes);
+
+                // Destroy the bullet
+                GameObject.Destroy(coll.gameObject);
             }
-
-            // Hide loosed life icon(s)
-            uiManager.playerTakeDamage(playerName, indexes);
-
-            // Destroy the bullet
-            GameObject.Destroy (coll.gameObject);
-		}
+        }
 	}
 }

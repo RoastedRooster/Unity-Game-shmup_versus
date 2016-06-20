@@ -31,7 +31,7 @@ public class EnemyBehavior : MonoBehaviour {
 
     IEnumerator flashEffect() {
         GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0.75f);
-        yield return new WaitForSeconds(0.025f);
+        yield return new WaitForEndOfFrame();
         GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0f);
     }
 
