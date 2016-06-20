@@ -74,6 +74,7 @@ public class PlayerBehavior : MonoBehaviour {
 
     public void win() {
         Debug.Log("Player " + name + " win !");
+        Time.timeScale = 0f;
     }
 
     IEnumerator flashEffect() {
