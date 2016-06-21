@@ -30,7 +30,6 @@ public class FieldGameManager : MonoBehaviour {
         StartCoroutine(DropPowerUp());
     }
 
-    
     IEnumerator DropPowerUp() {
         randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),
                                       startPoint.y);

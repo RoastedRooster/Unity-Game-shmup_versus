@@ -150,4 +150,19 @@ public class UIManager : MonoBehaviour {
             uiSoldier.FindChild("NextWave").gameObject.GetComponent<Text>().text = "Next wave : " + timer;
         }
     }
+
+    public void toggleTimer() {
+        Debug.Log(uiSoldier.FindChild("Timer").gameObject);
+        Text timer = uiSoldier.FindChild("Timer").gameObject.GetComponent<Text>();
+        if(timer.enabled) {
+            timer.enabled = false;
+        } else {
+            timer.enabled = true;
+        }
+    }
+
+    public void setTimer(int counter) {
+        uiSoldier.FindChild("Timer").gameObject.GetComponent<Text>().enabled = true;
+        uiSoldier.FindChild("Timer").gameObject.GetComponent<Text>().text = counter.ToString();
+    }
 }
