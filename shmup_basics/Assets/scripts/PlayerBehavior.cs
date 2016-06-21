@@ -9,7 +9,7 @@ public class PlayerBehavior : MonoBehaviour {
     public float invulnerabilityTime = 1.0f;
 
     public GameObject startingPoint;
-    
+
     private float health = 5;
     private float startingHealth;
     [SerializeField]
@@ -95,7 +95,7 @@ public class PlayerBehavior : MonoBehaviour {
             StartCoroutine("onHitEffect");
         }
     }
-    
+
 	void OnTriggerEnter2D(Collider2D coll) {
         if (coll.transform.tag == "bullet") {
             if(!isInvulnerable) {
@@ -107,8 +107,6 @@ public class PlayerBehavior : MonoBehaviour {
                 StartCoroutine("flashEffect");
                 // Start invulnerability effect
                 invulnerabiltyEndTime = Time.time + invulnerabilityTime;
-                Debug.Log(Time.time);
-                Debug.Log(invulnerabiltyEndTime);
                 isInvulnerable = true;
                 StartCoroutine("onHitEffect");
 
