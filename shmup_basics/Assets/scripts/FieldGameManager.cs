@@ -3,39 +3,31 @@ using System.Collections;
 
 public class FieldGameManager : MonoBehaviour {
 
-	public GameObject playerField;
-	public GameObject powerUpPrefab;
+    public GameObject playerField;
+    public GameObject powerUpPrefab;
 
-	private Vector2 startPoint;
-	private Vector2 endPoint;
+    private Vector2 startPoint;
+    private Vector2 endPoint;
     private Vector2 randPos;
 
     // Use this for initialization
     void Start () {
-		SpriteRenderer fieldSprite = playerField.GetComponent<SpriteRenderer> ();
-		startPoint = new Vector2(fieldSprite.bounds.extents.x, 0.0f);
+        SpriteRenderer fieldSprite = playerField.GetComponent<SpriteRenderer> ();
+        startPoint = new Vector2(fieldSprite.bounds.extents.x, 0.0f);
         float width = fieldSprite.bounds.size.x;
         float height = fieldSprite.bounds.size.y;
 
-		startPoint = new Vector2((playerField.transform.position.x - width/2) + 25,
+        startPoint = new Vector2((playerField.transform.position.x - width/2) + 25,
                                  playerField.transform.position.y + height/2);
 
-		endPoint = new Vector2((playerField.transform.position.x + width / 2) - 25,
+        endPoint = new Vector2((playerField.transform.position.x + width / 2) - 25,
                                playerField.transform.position.y + height / 2);
-
-        /*
-        randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),
-                                      startPoint.y);
-        */
-        StartCoroutine(DropPowerUp());
     }
 
-    IEnumerator DropPowerUp() {
+    public void DropPowerUp() {
         randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),
                                       startPoint.y);
         Instantiate(powerUpPrefab, randPos, Quaternion.identity);
-        yield return new WaitForSeconds(5f);
-        StartCoroutine(DropPowerUp());
     }
 
     // Update is called once per frame
