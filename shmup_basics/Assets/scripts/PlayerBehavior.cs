@@ -64,7 +64,9 @@ public class PlayerBehavior : MonoBehaviour {
     void FixedUpdate() {
         float h = Input.GetAxisRaw("Horizontal_" + ControllerIndex);
         float v = Input.GetAxisRaw("Vertical_" + ControllerIndex);
-
+     
+        Debug.Log(v);
+    
         rb2d.velocity = new Vector2(h * hMaxSpeed, v * vMaxSpeed);
 
         if (Input.GetButton("Fire_" + ControllerIndex)) {
