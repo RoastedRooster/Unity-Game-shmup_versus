@@ -7,17 +7,27 @@ public class EnemyBehavior : MonoBehaviour {
     private float health = 2;
     private float fireRateCoefficient = 1;
     private ShooterBehavior weapon;
+    private Animator anim;
 
     void Awake() {
         weapon = gameObject.GetComponentInChildren<ShooterBehavior>();
+        anim = GetComponent<Animator>();
     }
 
     void Update() {
         if(health <= 0) {
-            GameObject.Destroy(gameObject);
+            StartCoroutine("kill");
         }
-
         weapon.fire();
+    }
+
+    IEnumerator kill() {
+        anim.SetBool("isDead", true);
+        // Wait for one frame because Unity doesn't update clip info on the exact next frame.....
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
+        GameObject.Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D coll) {

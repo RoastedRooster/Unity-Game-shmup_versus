@@ -152,7 +152,6 @@ public class UIManager : MonoBehaviour {
     }
 
     public void toggleTimer() {
-        Debug.Log(uiSoldier.FindChild("Timer").gameObject);
         Text timer = uiSoldier.FindChild("Timer").gameObject.GetComponent<Text>();
         if(timer.enabled) {
             timer.enabled = false;
