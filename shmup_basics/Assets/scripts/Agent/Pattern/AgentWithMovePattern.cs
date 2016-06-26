@@ -22,8 +22,8 @@ namespace rr.agent.pattern {
             _initialized = true;
         }
 
-        public void OnDestroy() {
-            if(_tween != null)
+        public void Stop() {
+            if (_tween != null)
                 _tween.destroy();
         }
     }

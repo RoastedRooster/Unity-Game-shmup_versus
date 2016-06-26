@@ -1,10 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEditor;
+using System.Collections;
 using System.Collections.Generic;
 
-[CreateAssetMenuAttribute(menuName = "SHMUP/Weapon")]
-[Serializable]
-public class Weapon : ScriptableObject {
+[CustomEditor(typeof(Weapon))]
+public class WeaponEditor : Editor {
+
     [Range(0f, 1000f)]
     public float fireRate = 0.5f;
 

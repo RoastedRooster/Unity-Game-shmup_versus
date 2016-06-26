@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using rr.agent.pattern;
 
 public class EnemyBehavior : MonoBehaviour {
 
@@ -8,10 +9,12 @@ public class EnemyBehavior : MonoBehaviour {
     private float fireRateCoefficient = 1;
     private ShooterBehavior weapon;
     private Animator anim;
+    private AgentWithMovePattern movementManager;
 
     void Awake() {
         weapon = gameObject.GetComponentInChildren<ShooterBehavior>();
         anim = GetComponent<Animator>();
+        movementManager = GetComponent<AgentWithMovePattern>();
     }
 
     void Update() {
@@ -22,6 +25,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     IEnumerator kill() {
+        movementManager.Stop();
         anim.SetBool("isDead", true);
         // Wait for one frame because Unity doesn't update clip info on the exact next frame.....
         yield return new WaitForEndOfFrame();

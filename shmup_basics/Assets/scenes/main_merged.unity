@@ -710,6 +710,11 @@ Prefab:
       propertyPath: startingPoint
       value: 
       objectReference: {fileID: 1546048336}
+    - target: {fileID: 11426036, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: d23400cc8d443154bb2559998ae8b463,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 92eda9e186c004aa8b3742bc6f68a71b, type: 2}
   m_IsPrefabParent: 0
@@ -760,6 +765,11 @@ Prefab:
       propertyPath: startingPoint
       value: 
       objectReference: {fileID: 670071419}
+    - target: {fileID: 11406960, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: d23400cc8d443154bb2559998ae8b463,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bed2246a5309e2f49908adcd682fd802, type: 2}
   m_IsPrefabParent: 0
