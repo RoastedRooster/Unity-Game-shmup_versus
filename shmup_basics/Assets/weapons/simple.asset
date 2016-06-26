@@ -8,12 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: triple
-  m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  fireRate: 1
+  m_Script: {fileID: 11500000, guid: a6564530bfae13d48b2c0149ba3b9e34, type: 3}
+  m_Name: simple
+  m_EditorClassIdentifier: 
+  fireRate: 0.5
   bulletSpeed: 300
   bullets:
-  - {fileID: 153776, guid: f70ff165a1566b54a8fea57c493a671a, type: 2}
-  - {fileID: 153776, guid: 6f7de75e04e86d248abe4dccdc79162a, type: 2}
   - {fileID: 153776, guid: 4ea6d9cb07f352e45ad31a8652f8de2f, type: 2}

@@ -63,7 +63,11 @@ public class PlayerBehavior : MonoBehaviour {
 
     void FixedUpdate() {
         float h = Input.GetAxisRaw("Horizontal_" + ControllerIndex);
-        float v = Input.GetAxisRaw("Vertical_" + ControllerIndex);
+        float v = Input.GetAxisRaw("Vertical_keyboard_" + ControllerIndex);
+
+        if(v == .0f) {
+            v = -Input.GetAxisRaw("Vertical_gamepad_" + ControllerIndex);
+        }
 
         rb2d.velocity = new Vector2(h * hMaxSpeed, v * vMaxSpeed);
 

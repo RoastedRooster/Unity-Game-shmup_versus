@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11497134}
   - 95: {fileID: 9586242}
   - 114: {fileID: 11429152}
+  - 58: {fileID: 5848184}
   m_Layer: 10
   m_Name: char_evil
   m_TagString: Player
@@ -47,6 +48,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 232, y: -241, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 466114}
   m_Father: {fileID: 0}
@@ -60,6 +62,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14.5, y: 25.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 460734}
   m_RootOrder: 0
@@ -80,6 +83,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &5848184
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163816}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: -2, y: -5}
+  serializedVersion: 2
+  m_Radius: 6.079727
 --- !u!61 &6101064
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -100,7 +117,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -136,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deebe4328ab124e4eb5502ff236b2bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: f6a5d91925256b449b68aa488530dfcc, type: 2}
+  weapon: {fileID: 11400000, guid: 428fe04bc4e9a48f595a6de96515dc1b, type: 2}
 --- !u!114 &11429152
 MonoBehaviour:
   m_ObjectHideFlags: 1
