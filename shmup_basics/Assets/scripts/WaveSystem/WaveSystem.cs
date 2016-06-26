@@ -23,7 +23,7 @@ namespace rr.wavesystem {
         private Wave _currentWave;
         private float _timeBeforeNextWave = -1f;
         private float _timeBeforeNextSpawn = 0f;
-        private bool _stopped = false;
+        private bool _stopped = true;
         private UIManager uiManager;
         private FieldGameManager powerupManager;
 
@@ -34,6 +34,14 @@ namespace rr.wavesystem {
             powerupManager = GameObject.Find(transform.parent.name + "/FieldManager").GetComponent<FieldGameManager>();
         }
 
+        public void toggle() {
+            if(_stopped) {
+                _stopped = false;
+            } else {
+                _stopped = true;
+            }
+        }
+
         public void Update() {
             if (_stopped)
                 return;
@@ -42,6 +50,7 @@ namespace rr.wavesystem {
 
             if(_currentWave == null || (_timeBeforeNextWave > 0 && _timeBeforeNextWave < currentTime) || _currentWave.IsSpawned && _currentWave.IsCleared) {
                 if(_currentWave != null && _currentWave.IsCleared) {
+                    // Drop powerup on wave end
                     powerupManager.DropPowerUp();
                 }
                 _currentWave = GetNextWave();

@@ -462,6 +462,10 @@ Prefab:
       propertyPath: m_Name
       value: background_soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 144116, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
+      propertyPath: m_TagString
+      value: waveSystem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d94510d58098fb4db36ce929faca5e2, type: 2}
   m_IsPrefabParent: 0
@@ -611,6 +615,10 @@ Prefab:
     - target: {fileID: 190330, guid: 637985c69f4d0054888c6b047b296876, type: 2}
       propertyPath: m_Name
       value: background_evil
+      objectReference: {fileID: 0}
+    - target: {fileID: 127658, guid: 637985c69f4d0054888c6b047b296876, type: 2}
+      propertyPath: m_TagString
+      value: waveSystem
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 637985c69f4d0054888c6b047b296876, type: 2}
