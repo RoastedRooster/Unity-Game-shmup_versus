@@ -1,0 +1,93 @@
+fileFormatVersion: 2
+guid: a5dd0e14a9f47ec45915513573bf2846
+timeCreated: 1466956328
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: draft_enjmin_hound-Sheet_0
+    21300002: draft_enjmin_hound-Sheet_1
+    21300004: draft_enjmin_hound-Sheet_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 0.75
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: draft_enjmin_hound-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 21
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.46506736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: draft_enjmin_hound-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 10
+        width: 27
+        height: 23
+      alignment: 9
+      pivot: {x: 0.46589068, y: 0.32381803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: draft_enjmin_hound-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 10
+        width: 28
+        height: 23
+      alignment: 9
+      pivot: {x: 0.4868439, y: 0.32381803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
