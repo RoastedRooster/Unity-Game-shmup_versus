@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: HitEffect
+  m_Name: HitEffect 1
   m_Shader: {fileID: 4800000, guid: 7a9b8518024ae74449a506e08ff8b13e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -134,7 +134,7 @@ Material:
       data:
         first:
           name: _SelfIllum
-        second: 1
+        second: 0.7
       data:
         first:
           name: _FlashAmount
