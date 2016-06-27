@@ -135,7 +135,33 @@ public class PlayerBehavior : MonoBehaviour {
                 GameObject.Destroy(coll.gameObject);
             }
 		} else if (coll.transform.tag == "Enemy") {
-			
-		}
+            if (!isInvulnerable) {
+                // Make player flash
+                StartCoroutine("flashEffect");
+                // Start invulnerability effect
+                invulnerabiltyEndTime = Time.time + invulnerabilityTime;
+                isInvulnerable = true;
+                StartCoroutine("onHitEffect");
+
+                float damage = 2;
+                float[] indexes = new float[(int)damage];
+                indexes.Initialize();
+                // Damage the player
+                for (int i = 0; i < damage; i++) {
+                    if (health > 0) {
+                        // Stock life icone to remove
+                        indexes[i] = health;
+                    }
+                    // Damage player
+                    health -= 1;
+                }
+
+                // Hide loosed life icon(s)
+                uiManager.playerTakeDamage(playerName, indexes);
+
+                // Destroy the enemy
+                coll.gameObject.GetComponent<EnemyBehavior>().takeDamage(99f);
+            }
+        }
 	}
 }
