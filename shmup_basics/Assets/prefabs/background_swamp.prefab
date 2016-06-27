@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11471372}
   m_Layer: 0
   m_Name: WaveSystem
-  m_TagString: Untagged
+  m_TagString: waveSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,8 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingMode: 3
-  waveList:
-  - {fileID: 11400000, guid: 22d8cfe366ba046e2bce1616ad379d04, type: 2}
+  waveList: []
   waveCount: 0
   playerName: evil
 --- !u!212 &21294338

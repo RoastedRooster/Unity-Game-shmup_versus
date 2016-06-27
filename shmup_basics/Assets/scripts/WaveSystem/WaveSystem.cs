@@ -79,57 +79,60 @@ namespace rr.wavesystem {
         }
 
         protected Wave GetNextWave() {
-            if (_currentWaveIndex < waveList.Count) {
-                updateWaveCounter();
-                var nextWave = waveList[_currentWaveIndex];
-                _currentWaveIndex++;
-                return nextWave;
-            }
-            else {
-                switch(endingMode) {
-                    case EndingMode.Restart:
-                        updateWaveCounter();
-                        _currentWaveIndex = 0;
-                        var nextWave = waveList[_currentWaveIndex];
-                        nextWave.Reset();
-                        return nextWave;
-                    case EndingMode.InfiniteLast:
-                        return _currentWave.Clone();
-                    case EndingMode.LoopLast:
-                        updateWaveCounter();
-                        return _currentWave.Clone();
-                    case EndingMode.Combine:
-                        updateWaveCounter();
-                        _currentWaveIndex++;
+			if (waveList.Count > 0) {
+				if (_currentWaveIndex < waveList.Count) {
+					updateWaveCounter ();
+					var nextWave = waveList [_currentWaveIndex];
+					_currentWaveIndex++;
+					return nextWave;
+				} else {
+					switch (endingMode) {
+					case EndingMode.Restart:
+						updateWaveCounter ();
+						_currentWaveIndex = 0;
+						var nextWave = waveList [_currentWaveIndex];
+						nextWave.Reset ();
+						return nextWave;
+					case EndingMode.InfiniteLast:
+						return _currentWave.Clone ();
+					case EndingMode.LoopLast:
+						updateWaveCounter ();
+						return _currentWave.Clone ();
+					case EndingMode.Combine:
+						updateWaveCounter ();
+						_currentWaveIndex++;
 
-                        Wave combinedWave = ScriptableObject.CreateInstance<Wave>();
-                        var waveTypesCount = waveList.Count;
+						Wave combinedWave = ScriptableObject.CreateInstance<Wave> ();
+						var waveTypesCount = waveList.Count;
 
-                        var div = Mathf.FloorToInt(waveCount / waveTypesCount);
-                        var mod = waveCount % waveTypesCount;
+						var div = Mathf.FloorToInt (waveCount / waveTypesCount);
+						var mod = waveCount % waveTypesCount;
 
-                        Wave tmpWave;
-                        if(mod > 0) {
-                            tmpWave = waveList[mod];
-                            combinedWave.spawnList.AddRange(tmpWave.spawnList);
-                            combinedWave.duration += tmpWave.duration;
-                        }
+						Wave tmpWave;
+						if (mod > 0) {
+							tmpWave = waveList [mod];
+							combinedWave.spawnList.AddRange (tmpWave.spawnList);
+							combinedWave.duration += tmpWave.duration;
+						}
 
-                        if(div > 0) {
-                            tmpWave = waveList[waveTypesCount - 1];
-                            for(var i = 0; i < div; i++) {
-                                combinedWave.spawnList.AddRange(tmpWave.spawnList);
-                                combinedWave.duration += tmpWave.duration;
-                            }
-                        }
+						if (div > 0) {
+							tmpWave = waveList [waveTypesCount - 1];
+							for (var i = 0; i < div; i++) {
+								combinedWave.spawnList.AddRange (tmpWave.spawnList);
+								combinedWave.duration += tmpWave.duration;
+							}
+						}
 
-                        return combinedWave;
+						return combinedWave;
 
-                    case EndingMode.Stop:
-                    default:
-                        return null;
-                }
-            }
+					case EndingMode.Stop:
+					default:
+						return null;
+					}
+				}
+			} else {
+				return null;
+			}
         }
 
     }

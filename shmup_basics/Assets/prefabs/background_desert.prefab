@@ -41,7 +41,7 @@ GameObject:
   - 114: {fileID: 11446642}
   m_Layer: 0
   m_Name: WaveSystem
-  m_TagString: Untagged
+  m_TagString: waveSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   endingMode: 3
   waveList:
   - {fileID: 11400000, guid: e52689154fc9f5f408bcac7d6d9b647c, type: 2}
+  - {fileID: 11400000, guid: 22d8cfe366ba046e2bce1616ad379d04, type: 2}
   waveCount: 0
   playerName: soldier
 --- !u!212 &21220968

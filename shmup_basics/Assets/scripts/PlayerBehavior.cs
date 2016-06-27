@@ -100,11 +100,15 @@ public class PlayerBehavior : MonoBehaviour {
         }
     }
 
+	void damagePlayer(float damage) {
+	}
+
 	void OnTriggerEnter2D(Collider2D coll) {
         if (coll.transform.tag == "bullet") {
             if(!isInvulnerable) {
                 float damage = coll.GetComponent<BulletBehavior>().getDamage();
-                float[] indexes = new float[(int)damage];
+                
+				float[] indexes = new float[(int)damage];
                 indexes.Initialize();
 
                 // Make player flash
@@ -130,6 +134,8 @@ public class PlayerBehavior : MonoBehaviour {
                 // Destroy the bullet
                 GameObject.Destroy(coll.gameObject);
             }
-        }
+		} else if (coll.transform.tag == "Enemy") {
+			
+		}
 	}
 }
