@@ -34,10 +34,10 @@ namespace rr.wavesystem {
             }
         }
 
-        public float SpawnNext() {
+        public float SpawnNext(GameObject[] availablePositions) {
             if(!IsSpawned) {
                 var spawn = spawnList[_nextSpawnIndex];
-                var spawnObject = GameObject.Instantiate(spawn.enemyPrefab, spawn.spawnLocation.transform.position, Quaternion.identity) as GameObject;
+                var spawnObject = GameObject.Instantiate(spawn.enemyPrefab, availablePositions[(int)spawn.spawnLocation].transform.position, Quaternion.identity) as GameObject;
                 spawnObject.GetComponent<AgentWithMovePattern>().pattern = spawn.movementPattern;
                 _spawnedList.Add(spawnObject);
 

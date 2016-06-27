@@ -12,13 +12,21 @@ namespace rr.wavesystem {
         InfiniteLast
     }
 
+    public enum SpawnPointPosition : int {
+        Left = 0,
+        Right = 1
+    }
+
     public class WaveSystem : MonoBehaviour {
 
         public EndingMode endingMode = EndingMode.Stop;
-        public List<Wave> waveList = new List<Wave>();
+        public List<Wave> waveModels = new List<Wave>();
         public int waveCount = 0;
         public string playerName;
+        [Tooltip("Left = 0, Right = 1")]
+        public GameObject[] spawnLocations;
 
+        private List<Wave> waveList = new List<Wave>();
         private int _currentWaveIndex = 0;
         private Wave _currentWave;
         private float _timeBeforeNextWave = -1f;
@@ -28,8 +36,10 @@ namespace rr.wavesystem {
         private FieldGameManager powerupManager;
 
         public void Start() {
-            foreach (var wave in waveList)
-                wave.Reset();
+            foreach (var model in waveModels) {
+                waveList.Add(model.Clone());
+            }
+
             uiManager = GameObject.Find("GameScreenUI").GetComponent<UIManager>();
             powerupManager = GameObject.Find(transform.parent.name + "/FieldManager").GetComponent<FieldGameManager>();
         }
@@ -68,7 +78,7 @@ namespace rr.wavesystem {
             }
 
             if(!_currentWave.IsSpawned && currentTime > _timeBeforeNextSpawn) {
-                var timeTilNext = _currentWave.SpawnNext();
+                var timeTilNext = _currentWave.SpawnNext(spawnLocations);
                 _timeBeforeNextSpawn = currentTime + timeTilNext;
             }
         }

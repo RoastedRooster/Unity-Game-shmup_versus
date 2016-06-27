@@ -14,7 +14,7 @@ namespace rr.wavesystem {
         #region FIELDS
             
         // Where to spawn the enemy 
-        public GameObject spawnLocation;
+        public SpawnPointPosition spawnLocation;
 
         // Which enemy to spawn            
         public GameObject enemyPrefab;
