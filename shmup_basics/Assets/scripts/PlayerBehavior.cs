@@ -14,6 +14,7 @@ public class PlayerBehavior : MonoBehaviour {
     private float startingHealth;
     [SerializeField]
     private float fireRateCoefficient = 1;
+	private float movementSpeedCoefficient = 1;
     private Rigidbody2D rb2d;
     private ShooterBehavior weapon;
     private string playerName;
@@ -36,6 +37,14 @@ public class PlayerBehavior : MonoBehaviour {
     public void setFireRateCoefficient(float newValue) {
         fireRateCoefficient = newValue;
     }
+
+	public float getMovementSpeedCoefficient() {
+		return movementSpeedCoefficient;
+	}
+
+	public void setMovementSpeedCoefficient(float newValue) {
+		movementSpeedCoefficient = newValue;
+	}
 
     void Start() {
         rb2d = GetComponent<Rigidbody2D>();
@@ -70,7 +79,8 @@ public class PlayerBehavior : MonoBehaviour {
         }
 
         
-        rb2d.velocity = new Vector2(h * hMaxSpeed, v * vMaxSpeed);
+		rb2d.velocity = new Vector2(h * hMaxSpeed * movementSpeedCoefficient,
+									v * vMaxSpeed * movementSpeedCoefficient);
         if (Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0)
             GetComponent<Animator>().SetBool("IsMoving", true);
         else
