@@ -15,11 +15,11 @@ MonoBehaviour:
   spawnList:
   - spawnLocation: 0
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
-    movementPattern: {fileID: 11400000, guid: cc195e4fe5a0b4fa280ff33f8d6e3ca3, type: 2}
+    movementPattern: {fileID: 11400000, guid: a1179dfc9837a254dbdac0021a084a04, type: 2}
     timeBeforeNextSpawn: 2
   - spawnLocation: 1
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
-    movementPattern: {fileID: 11400000, guid: a1179dfc9837a254dbdac0021a084a04, type: 2}
+    movementPattern: {fileID: 11400000, guid: cc195e4fe5a0b4fa280ff33f8d6e3ca3, type: 2}
     timeBeforeNextSpawn: 2
   - spawnLocation: 0
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
@@ -27,5 +27,5 @@ MonoBehaviour:
     timeBeforeNextSpawn: 2
   - spawnLocation: 1
     enemyPrefab: {fileID: 172844, guid: 6e02c857b0788424aa419977942adf6a, type: 2}
-    movementPattern: {fileID: 11400000, guid: a1179dfc9837a254dbdac0021a084a04, type: 2}
+    movementPattern: {fileID: 11400000, guid: cc195e4fe5a0b4fa280ff33f8d6e3ca3, type: 2}
     timeBeforeNextSpawn: 2

@@ -17,6 +17,10 @@ public class EnemyBehavior : MonoBehaviour {
         movementManager = GetComponent<AgentWithMovePattern>();
     }
 
+    public void takeDamage(float damage) {
+        health -= damage;
+    }
+
     void Update() {
         if(health <= 0) {
             StartCoroutine("kill");
