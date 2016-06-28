@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerField: {fileID: 190330}
-  powerUpPrefab: {fileID: 171230, guid: 01cec57467a9d43cbbec4a36bb9c7d94, type: 2}
+  powerUpPrefab: {fileID: 171230, guid: 48b3c3dc9c95e4f628950e8dac3ce06a, type: 2}
 --- !u!114 &11471372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,9 +167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingMode: 3
-  waveList: []
+  waveModels:
+  - {fileID: 11400000, guid: e52689154fc9f5f408bcac7d6d9b647c, type: 2}
+  - {fileID: 11400000, guid: 22d8cfe366ba046e2bce1616ad379d04, type: 2}
   waveCount: 0
   playerName: evil
+  spawnLocations:
+  - {fileID: 176568}
+  - {fileID: 196166}
 --- !u!212 &21294338
 SpriteRenderer:
   m_ObjectHideFlags: 1
