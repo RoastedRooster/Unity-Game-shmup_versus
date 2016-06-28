@@ -69,7 +69,12 @@ public class PlayerBehavior : MonoBehaviour {
             v = -Input.GetAxisRaw("Vertical_gamepad_" + ControllerIndex);
         }
 
+        
         rb2d.velocity = new Vector2(h * hMaxSpeed, v * vMaxSpeed);
+        if (Mathf.Abs(h) > 0 || Mathf.Abs(v) > 0)
+            GetComponent<Animator>().SetBool("IsMoving", true);
+        else
+            GetComponent<Animator>().SetBool("IsMoving", false);
 
         if (Input.GetButton("Fire_" + ControllerIndex)) {
             weapon.fire();
