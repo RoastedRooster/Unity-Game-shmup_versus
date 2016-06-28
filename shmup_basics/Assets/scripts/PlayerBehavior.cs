@@ -118,6 +118,11 @@ public class PlayerBehavior : MonoBehaviour {
 	void damagePlayer(float damage) {
 	}
 
+    public void setInvulnerability(bool newState) {
+        Debug.Log("INVUL");
+        isInvulnerable = newState;
+    }
+
 	void OnTriggerEnter2D(Collider2D coll) {
         if (coll.transform.tag == "bullet") {
             if(!isInvulnerable) {
