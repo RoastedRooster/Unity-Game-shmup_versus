@@ -4,7 +4,7 @@ using System.Collections;
 public class FieldGameManager : MonoBehaviour {
 
     public GameObject playerField;
-    public GameObject powerUpPrefab;
+    public GameObject[] powerUpPrefab;
 
     private Vector2 startPoint;
     private Vector2 endPoint;
@@ -26,8 +26,9 @@ public class FieldGameManager : MonoBehaviour {
 
     public void DropPowerUp() {
         randPos = new Vector2(Random.Range(startPoint.x, endPoint.x),
-                                      startPoint.y);
-        Instantiate(powerUpPrefab, randPos, Quaternion.identity);
+                              startPoint.y);
+		GameObject powerUp = powerUpPrefab[Random.Range(0, powerUpPrefab.Length)];
+		Instantiate(powerUp, randPos, Quaternion.identity);
     }
 
     // Update is called once per frame

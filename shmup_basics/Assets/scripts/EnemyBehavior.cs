@@ -25,7 +25,9 @@ public class EnemyBehavior : MonoBehaviour {
         if(health <= 0) {
             StartCoroutine("kill");
         }
-        weapon.fire();
+		if (weapon != null) {
+			weapon.fire();
+		}
     }
 
     IEnumerator kill() {
