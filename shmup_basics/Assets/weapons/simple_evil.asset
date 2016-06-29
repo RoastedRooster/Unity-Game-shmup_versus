@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6564530bfae13d48b2c0149ba3b9e34, type: 3}
   m_Name: simple_evil
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 0.35
   bulletSpeed: 300
   bullets:
   - {fileID: 153776, guid: 4ea6d9cb07f352e45ad31a8652f8de2f, type: 2}
