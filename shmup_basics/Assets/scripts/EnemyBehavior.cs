@@ -33,6 +33,7 @@ public class EnemyBehavior : MonoBehaviour {
     IEnumerator kill() {
         movementManager.Stop();
         anim.SetBool("isDead", true);
+		transform.Rotate (new Vector3 (0, 0, Random.Range(0, 360)));
         // Wait for one frame because Unity doesn't update clip info on the exact next frame.....
         yield return new WaitForEndOfFrame();
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
